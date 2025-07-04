@@ -1,1 +1,149 @@
 /* LOCATION */
+.section .location {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
+}
+.location-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.location-text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loc-sec {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: capitalize;
+  color: #0b0500;
+}
+
+.loc-title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #0b0500;
+}
+
+.loc-text {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #0b0500;
+}
+
+.loc-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  padding: 8px 0px;
+}
+
+.loc-link {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.loc-icon {
+  fill: #0b0500;
+}
+
+.loc-link-text {
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #0b0500;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link-text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-link {
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #0b0500;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  opacity: 0.2;
+}
+.contact-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #0b0500;
+  padding-bottom: 40px;
+}
+
+.contact-map {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.contact-map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .section.location {
+    gap: 80px;
+  }
+  .location-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .loc-text {
+    width: 336px;
+  }
+
+  .contact-text {
+    padding-bottom: 80px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .location-section {
+    gap: 80px;
+  }
+  .loc-text {
+    width: 732px;
+  }
+}
