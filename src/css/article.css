@@ -16,6 +16,9 @@
   .article h2.title {
     font-size: 40px;
   }
+  .article-text {
+    max-width: 636px;
+  }
 
   .article-image {
     min-width: 640px;
