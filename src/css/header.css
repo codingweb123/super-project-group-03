@@ -1,10 +1,9 @@
 /* HEADER */
-.header-conteiner {
-  padding: 0px 12px 0px 20px;
+.container {
+  padding: 14px 24px 14px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
 }
 
 .header-logo {
@@ -18,23 +17,20 @@
 }
 .burger-btn {
   padding: 0;
-  border: none;
   background-color: transparent;
 }
 .burger-icon {
   display: block;
-  fill: #0b0500;
 }
 
 @media screen and (min-width: 768px) {
-  .header-conteiner {
-    padding: 0px 32px;
+  .container {
+    padding: 16px 32px;
   }
   .header-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: auto;
   }
   .header-nav-list {
     display: flex;
@@ -42,25 +38,22 @@
     gap: 32px;
   }
   .header-nav-link {
-    display: block;
-    font-weight: 400;
     font-size: 16px;
-    line-height: 1.5;
     color: #0b0500;
   }
   .burger-btn {
     display: none;
   }
   .header-nav-link:hover {
-    opacity: 0.8;
+    color: #54504c;
   }
   .header-nav-link:focus {
-    opacity: 0.2;
+    color: #dad9d8;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .header-conteiner {
-    padding: 0px 64px;
+  .container {
+    padding: 16px 64px;
   }
 }
