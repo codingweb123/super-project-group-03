@@ -107,10 +107,8 @@ body {
     .footer-form-label {
         flex-wrap: wrap;
     }
-    .footer-email-field {
-        width: 100%;
-    }
-    .footer-btn {
+    .footer-email-field,
+    .footer-btn{
         width: 100%;
     }
 }
