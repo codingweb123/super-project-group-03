@@ -1,1 +1,127 @@
-/* EVENTS */
+.events-title-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.events-title-content h4 {
+  margin-bottom: 0;
+}
+.events-title-content h2 {
+  font-size: 36px;
+}
+
+.events-title-content p {
+  font-size: 18px;
+}
+
+.event-image {
+  border-radius: 16px;
+  width: 100%;
+  height: 277px;
+}
+
+.swiper-wrapper {
+  margin-top: 32px;
+}
+.swiper-wrapper svg {
+  transform: rotate(90deg);
+}
+.swiper-wrapper h3 {
+  margin-top: 24px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.card-time {
+  font-size: 16px;
+}
+
+.card-text {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.event-register {
+  display: flex;
+  margin-top: 24px;
+  font-size: 16px;
+  width: 95px;
+  height: 24px;
+  margin-right: 4px;
+}
+
+.event-second .event-register {
+  margin-top: 58px;
+}
+.event-third .event-register {
+  margin-top: 58px;
+}
+
+.swiper-button-prev svg {
+  transform: rotate(-90deg);
+}
+.swiper-button-next svg {
+  transform: rotate(90deg);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 48px;
+  height: 48px;
+  background-color: #e15d05;
+  padding: 12px;
+  fill: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-controls {
+  display: flex;
+  gap: 16px;
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #c5b9b2;
+  border-radius: 50%;
+  opacity: 1;
+  transition: background-color 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #0b0500;
+}
+.event-controler {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .events-title-content p {
+    max-width: 560px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .events-title-content h2 {
+    font-size: 48px;
+  }
+  .event-third .event-register {
+    margin-top: 82px;
+  }
+  .event-controler {
+    display: none;
+  }
+}
