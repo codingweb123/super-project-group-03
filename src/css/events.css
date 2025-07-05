@@ -1,30 +1,18 @@
-/*#region events-title*/
-
 .events-title-content {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.events-title-content span {
-  font-size: 16px;
-  font-weight: 600;
+.events-title-content h4 {
+  margin-bottom: 0;
 }
-
 .events-title-content h2 {
   font-size: 36px;
 }
 
 .events-title-content p {
   font-size: 18px;
-}
-/*#endregion events-title*/
-
-/*#region Card*/
-
-.event-card-list li {
-  display: none;
-  margin-top: 32px;
 }
 
 .event-image {
@@ -33,7 +21,13 @@
   height: 277px;
 }
 
-.event-card-list h2 {
+.swiper-wrapper {
+  margin-top: 32px;
+}
+.swiper-wrapper svg {
+  transform: rotate(90deg);
+}
+.swiper-wrapper h3 {
   margin-top: 24px;
   font-size: 24px;
   font-weight: 400;
@@ -54,6 +48,7 @@
   font-size: 16px;
   width: 95px;
   height: 24px;
+  margin-right: 4px;
 }
 
 .event-second .event-register {
@@ -63,95 +58,59 @@
   margin-top: 58px;
 }
 
-.event-register span {
-  margin-right: 4px;
+.swiper-button-prev svg {
+  transform: rotate(-90deg);
+}
+.swiper-button-next svg {
+  transform: rotate(90deg);
 }
 
-/*#endregion Card*/
-
-/*#region Slider*/
-
-input[type='radio'] {
-  display: none;
-}
-#reviews1:checked ~ .event-card-list .event-first {
-  display: block;
-}
-#reviews2:checked ~ .event-card-list .event-second {
-  display: block;
-}
-#reviews3:checked ~ .event-card-list .event-third {
-  display: block;
-}
-
-.slider-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-top: 32px;
-}
-
-.slider-navigation {
-  display: flex;
-  gap: 16px;
-}
-
-.customers-slider-nav {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-.customers-slider-nav label {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #ccc;
-  cursor: pointer;
-  transition: background-color 0.3s, width 0.3s, border-radius 0.3s;
-}
-#reviews1:checked ~ .customers-slider-nav label[for='reviews1'],
-#reviews2:checked ~ .customers-slider-nav label[for='reviews2'],
-#reviews3:checked ~ .customers-slider-nav label[for='reviews3'] {
-  background: #1b414b;
-  width: 32px;
-  height: 12px;
-  border-radius: 10px;
-}
-
-.slider-btn {
+.swiper-button-prev,
+.swiper-button-next {
   width: 48px;
   height: 48px;
   background-color: #e15d05;
   padding: 12px;
-  fill: #fff;
+  fill: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-controls {
+  display: flex;
+  gap: 16px;
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #c5b9b2;
+  border-radius: 50%;
+  opacity: 1;
+  transition: background-color 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #0b0500;
+}
+.event-controler {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
 }
 
 @media screen and (min-width: 768px) {
   .events-title-content p {
     max-width: 560px;
-  }
-
-  .event-card-list {
-    display: flex;
-    gap: 24px;
-  }
-
-  .event-card-list li {
-    width: calc((100% - 24px) / 2);
-  }
-
-  #reviews1:checked ~ .event-card-list .event-first,
-  #reviews1:checked ~ .event-card-list .event-second {
-    display: block;
-  }
-  #reviews2:checked ~ .event-card-list .event-second,
-  #reviews2:checked ~ .event-card-list .event-third {
-    display: block;
-  }
-  #reviews3:checked ~ .event-card-list .event-first,
-  #reviews3:checked ~ .event-card-list .event-third {
-    display: block;
   }
 }
 
@@ -162,12 +121,7 @@ input[type='radio'] {
   .event-third .event-register {
     margin-top: 82px;
   }
-
-  .event-card-list li {
-    width: calc((100% - 48px) / 3);
-    display: block;
-  }
-  .slider-controls {
+  .event-controler {
     display: none;
   }
 }
