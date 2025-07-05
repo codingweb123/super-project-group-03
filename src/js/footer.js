@@ -13,6 +13,7 @@ footerForm.addEventListener('submit', function (event) {
       message: 'Thank you! You have successfully subscribed to the newsletter.',
       position: 'bottomRight',
       timeout: 3000,
+      backgroundColor: '#ffffff',
     });
 
     emailInput.value = '';

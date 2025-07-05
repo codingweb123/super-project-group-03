@@ -10,17 +10,15 @@ body {
 .footer-left {
     display: flex;
     flex-direction: column;
-}
-.footer-logo-link {
-    margin: 0 auto 32px;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 32px;
 }
 
 .footer-nav {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    margin: 0 auto 32px;
+    align-items: center;
     gap: 32px;
 }
 
@@ -39,9 +37,7 @@ body {
 }
 
 .form-footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-bottom: 80px;
 }
 
 .footer-form-text {
@@ -50,8 +46,10 @@ body {
     margin-bottom: 16px;
 }
 
-.container-footer-form {
-    margin-bottom: 80px;
+.footer-form-label {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
 }
 
 .footer-email-field {
@@ -61,7 +59,6 @@ body {
     height: 48px;
     background-color: rgba(11, 5, 0, 0.05);
     padding: 12px;
-    margin-right: 16px;
     font-family: inherit;
 }
 
@@ -95,64 +92,39 @@ body {
 }
 
 .footer-afterform-text {
-    margin-top: 12px;
     font-size: 12px;
 }
 
 .footer-company-text {
-    font-size: 14px;
     padding-top: 32px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
 }
 
 @media screen and (min-width: 768px) {
+    .footer > .container {
+        padding: 0 64px;
+    }
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .footer-nav {
         flex-direction: row;
     }
-    .container-footer-form {
-        display: block;
-        margin: 0 152px 80px 152px;
-    }
     .footer-email-field {
         width: 278px;
-    }
-    .footer-company-text {
-        margin: 0 32px;
-    }
+    } 
 }
 
 @media screen and (min-width: 1440px) {
     .footer-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .footer-left {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-    }
-
-    .footer-logo-link {
-        margin: 0;
-    }
-
-    .footer-nav {
-        display: flex;
         flex-direction: row;
-        gap: 32px;
-        margin: 0;
-        padding: 0;
+        justify-content: space-between;
+        align-items: start;
     }
-
-    .container-footer-form {
-        margin: 0;
-    }
-
-    .footer-company-text {
-        margin: 80px 0 0 0;
-        padding-top: 32px;     
+    .footer-left {
+        align-items: start;
     }
 }
