@@ -1,0 +1,2 @@
+import"./assets/styles-D5EhrlKY.js";import{i as t}from"./assets/vendor-I1I71QQ2.js";const o=document.querySelector(".form-footer"),r=document.querySelector(".footer-email-field"),s=document.querySelector(".footer-btn");o.addEventListener("submit",function(e){e.preventDefault(),t.success({title:"Success",message:"Thank you! You have successfully subscribed to the newsletter.",position:"bottomRight",timeout:3e3,backgroundColor:"#ffffff"}),r.value="",s.disabled=!0});
+//# sourceMappingURL=index.js.map
