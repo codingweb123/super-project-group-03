@@ -6,10 +6,8 @@
   justify-content: space-between;
 }
 
-.header-logo {
-  width: 84px;
-  height: 36px;
-  fill: #010101;
+.logo-link {
+  display: flex;
 }
 
 .header-nav {
@@ -20,7 +18,7 @@
   background-color: transparent;
 }
 .burger-icon {
-  display: block;
+  display: flex;
 }
 
 @media screen and (min-width: 768px) {
@@ -37,18 +35,24 @@
     align-items: center;
     gap: 32px;
   }
+
+  .header-nav-link.active {
+    color: var(--primary);
+  }
   .header-nav-link {
     font-size: 16px;
-    color: #0b0500;
+    color: rgba(11, 5, 0, 0.6);
   }
   .burger-btn {
     display: none;
   }
   .header-nav-link:hover {
-    color: #54504c;
+    color: var(--primary);
+    transition: var(--time) var(--transition);
   }
   .header-nav-link:focus {
     color: #dad9d8;
+    transition: var(--time) var(--transition);
   }
 }
 
