@@ -15,6 +15,10 @@ body {
     margin-bottom: 32px;
 }
 
+.footer-logo-link {
+    display: flex;
+}
+
 .footer-nav {
     display: flex;
     flex-direction: column;
@@ -24,14 +28,12 @@ body {
 
 .footer-nav-link {
     font-size: 16px;
+    color: rgba(11, 5, 0, 0.7);
     transition: color var(--time) var(--transition);
 }
 
-.footer-nav-item .active {
-    color: rgba(11, 5, 0, 0.8);
-}
-
-.foter-nav-link:hover,
+.footer-nav-item.active .footer-nav-link,
+.footer-nav-link:hover,
 .footer-nav-link:focus {
     color: var(--primary);
 }
@@ -101,6 +103,18 @@ body {
     text-align: center;
 }
 
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    .footer-form-label {
+        flex-wrap: wrap;
+    }
+    .footer-email-field {
+        width: 100%;
+    }
+    .footer-btn {
+        width: 100%;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .footer > .container {
         padding: 0 64px;
@@ -126,5 +140,6 @@ body {
     }
     .footer-left {
         align-items: start;
+        margin: 0;
     }
 }
