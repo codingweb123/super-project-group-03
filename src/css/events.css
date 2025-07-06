@@ -129,10 +129,9 @@
 }
 
 .swiper-button-disabled {
-  background-color: rgb(225, 93, 5, 50%);
-  fill: rgb(11, 5, 0, 50%);
+  background-color: rgb(225, 93, 5, 20%);
+  fill: rgb(11, 5, 0, 20%);
   pointer-events: none;
-  cursor: default;
 }
 
 @media screen and (min-width: 768px) {

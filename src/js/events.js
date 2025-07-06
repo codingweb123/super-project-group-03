@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-new Swiper('.swiper', {
+new Swiper('.events .swiper', {
   spaceBetween: 24,
   slidesPerView: 1,
 
