@@ -52,10 +52,10 @@
   opacity: 0.75;
 }
 
-.event-second .event-register {
+.swiper-slide:nth-child(2) .event-register {
   margin-top: 58px;
 }
-.event-third .event-register {
+.swiper-slide:last-child .event-register {
   margin-top: 58px;
 }
 
@@ -118,6 +118,7 @@
 .swiper-pagination-bullet-active {
   background-color: #0b0500;
 }
+
 .event-controler {
   display: flex;
   justify-content: space-between;
@@ -142,7 +143,7 @@
   .events h2 {
     font-size: 48px;
   }
-  .event-third .event-register {
+  .swiper-slide:last-child .event-register {
     margin-top: 82px;
   }
   .event-controler {

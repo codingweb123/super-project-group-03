@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import 'swiper/css';
-import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
-Swiper.use([Navigation, Pagination, Scrollbar]);
+import { Navigation, Pagination } from 'swiper/modules';
+Swiper.use([Navigation, Pagination]);
 
 document.addEventListener('DOMContentLoaded', () => {
   const registerLinks = document.querySelectorAll('.event-register');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Закрытие модалкy при клике по фону
   modalOverlay.addEventListener('click', e => {
-    if (e.target === modalOverlay) {
+    if (e.target === e.currentTarget) {
       modalOverlay.classList.remove('is-open');
     }
   });
@@ -36,11 +36,6 @@ new Swiper('.swiper', {
     clickable: true,
   },
 
-  scrollbar: {
-    el: '.swiper-scrollbar',
-    draggable: true,
-  },
-
   breakpoints: {
     768: {
       slidesPerView: 2,
@@ -48,23 +43,5 @@ new Swiper('.swiper', {
     1440: {
       slidesPerView: 3,
     },
-
-    on: {
-      slideChange: updateButtons,
-      afterInit: updateButtons,
-    },
   },
 });
-
-function updateButtons() {
-  const prev = document.querySelector('.swiper-button-prev');
-  const next = document.querySelector('.swiper-button-next');
-
-  if (swiper.isBeginning) {
-    prev.classList.add('disabled');
-  }
-
-  if (swiper.isEnd) {
-    next.classList.add('disabled');
-  }
-}
