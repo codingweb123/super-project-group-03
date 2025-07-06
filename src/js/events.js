@@ -22,8 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-const swiper = new Swiper('.swiper', {
-  loop: true,
+new Swiper('.swiper', {
   spaceBetween: 24,
   slidesPerView: 1,
 
@@ -49,5 +48,23 @@ const swiper = new Swiper('.swiper', {
     1440: {
       slidesPerView: 3,
     },
+
+    on: {
+      slideChange: updateButtons,
+      afterInit: updateButtons,
+    },
   },
 });
+
+function updateButtons() {
+  const prev = document.querySelector('.swiper-button-prev');
+  const next = document.querySelector('.swiper-button-next');
+
+  if (swiper.isBeginning) {
+    prev.classList.add('disabled');
+  }
+
+  if (swiper.isEnd) {
+    next.classList.add('disabled');
+  }
+}

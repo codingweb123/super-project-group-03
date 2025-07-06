@@ -1,18 +1,14 @@
-.events-title-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.events-title-content h4 {
+.events h4 {
   margin-bottom: 0;
 }
-.events-title-content h2 {
+.events h2 {
   font-size: 36px;
+  margin-top: 16px;
 }
 
-.events-title-content p {
+.events p {
   font-size: 18px;
+  margin-top: 16px;
 }
 
 .event-image {
@@ -33,13 +29,14 @@
   font-weight: 400;
   line-height: 1.4;
 }
-.card-time {
+
+.swiper-wrapper p {
   font-size: 16px;
+  margin-top: 0;
 }
 
-.card-text {
+.swiper-wrapper .card-text {
   margin-top: 8px;
-  font-size: 16px;
 }
 
 .event-register {
@@ -47,8 +44,12 @@
   margin-top: 24px;
   font-size: 16px;
   width: 95px;
-  height: 24px;
-  margin-right: 4px;
+  transition: opacity var(--time) var(--transition);
+}
+
+.event-register:hover,
+.event-register:focus {
+  opacity: 0.75;
 }
 
 .event-second .event-register {
@@ -75,6 +76,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color var(--time) var(--transition),
+    fill var(--time) var(--transition);
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover,
+.swiper-button-prev:focus,
+.swiper-button-next:focus {
+  background-color: transparent;
+  fill: black;
+  border: 1px solid rgb(11, 5, 0, 15%);
+}
+.swiper-button-prev:active,
+.swiper-button-next:active {
+  background-color: #5a2502;
+  fill: white;
 }
 
 .swiper-controls {
@@ -108,14 +125,21 @@
   margin-top: 32px;
 }
 
+.swiper-button-disabled {
+  opacity: 0.2;
+  fill: #0b0500;
+  pointer-events: none;
+  cursor: default;
+}
+
 @media screen and (min-width: 768px) {
-  .events-title-content p {
+  .events p {
     max-width: 560px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .events-title-content h2 {
+  .events h2 {
     font-size: 48px;
   }
   .event-third .event-register {
