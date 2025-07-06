@@ -1,18 +1,13 @@
-const closeBtn = document.querySelector(".menu-close-btn");
+const burgerMenu = document.querySelector(".menu");
+const openBtn = document.querySelector(".burger-btn");
 const menuOverlay = document.querySelector(".menu-overlay");
-const menuLinks = document.querySelectorAll(".menu-nav-link");
-const body = document.querySelector("body");
 
-closeBtn.addEventListener("click", handleClick);
+openBtn.addEventListener("click", () => menuOverlay.classList.add("is-open"));
 
-function handleClick() {
-    menuOverlay.classList.remove("is-open");
-};
+burgerMenu.addEventListener("click", element => {
+    const menuBtn = element.target;
 
-menuLinks.forEach(link => {
-    link.addEventListener("click", handleLink);
-    function handleLink() {
+    if (menuBtn.classList.contains("menu-close-btn") || menuBtn.classList.contains("menu-nav-link")) {
         menuOverlay.classList.remove("is-open");
-        body.style.scrollBehavior = "smooth";
-    };
-});
+    }
+})
