@@ -4,6 +4,8 @@
 .events h2 {
   font-size: 36px;
   margin-top: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .events p {
@@ -28,6 +30,7 @@
   font-size: 24px;
   font-weight: 400;
   line-height: 1.4;
+  letter-spacing: -0.01em;
 }
 
 .swiper-wrapper p {
@@ -44,18 +47,19 @@
   margin-top: 24px;
   font-size: 16px;
   width: 95px;
-  transition: opacity var(--time) var(--transition);
+  transition: color var(--time) var(--transition),
+    fill var(--time) var(--transition);
 }
 
 .event-register:hover,
 .event-register:focus {
-  opacity: 0.75;
+  color: rgb(11, 5, 0, 75%);
+  fill: rgb(11, 5, 0, 75%);
+  text-decoration: underline;
 }
 
-.swiper-slide:nth-child(2) .event-register {
-  margin-top: 58px;
-}
-.swiper-slide:last-child .event-register {
+.swiper-slide:nth-child(2) .event-register,
+.swiper-slide:nth-child(3) .event-register {
   margin-top: 58px;
 }
 
@@ -70,7 +74,7 @@
 .swiper-button-next {
   width: 48px;
   height: 48px;
-  background-color: #e15d05;
+  background-color: var(--orange);
   padding: 12px;
   fill: white;
   display: flex;
@@ -85,7 +89,7 @@
 .swiper-button-prev:focus,
 .swiper-button-next:focus {
   background-color: transparent;
-  fill: black;
+  fill: var(--primary);
   border: 1px solid rgb(11, 5, 0, 15%);
 }
 .swiper-button-prev:active,
@@ -103,7 +107,6 @@
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 16px;
 }
 
 .swiper-pagination-bullet {
@@ -111,12 +114,11 @@
   height: 12px;
   background-color: #c5b9b2;
   border-radius: 50%;
-  opacity: 1;
-  transition: background-color 0.3s;
+  transition: background-color var(--time) var(--transition);
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #0b0500;
+  background-color: var(--primary);
 }
 
 .event-controler {
@@ -127,14 +129,14 @@
 }
 
 .swiper-button-disabled {
-  opacity: 0.2;
-  fill: #0b0500;
+  background-color: rgb(225, 93, 5, 50%);
+  fill: rgb(11, 5, 0, 50%);
   pointer-events: none;
   cursor: default;
 }
 
 @media screen and (min-width: 768px) {
-  .events p {
+  .event-text {
     max-width: 560px;
   }
 }
@@ -143,7 +145,7 @@
   .events h2 {
     font-size: 48px;
   }
-  .swiper-slide:last-child .event-register {
+  .swiper-slide:nth-child(3) .event-register {
     margin-top: 82px;
   }
   .event-controler {
