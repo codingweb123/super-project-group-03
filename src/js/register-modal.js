@@ -1,21 +1,18 @@
 import { refs } from "./refs";
 import { hideRegisterModal } from "./helpers";
 
+
 const registerModalFormEl = document.querySelector('.register-form');
-const registerNameInput = document.querySelector('.register-name-input');
-const registerEmailInput = document.querySelector('.register-email-input');
-const registerMessageTextarea = document.querySelector('.register-message-textarea');
 const registerCloseBtn = document.querySelector('.register-modal-close');
-const modalEventTitileEl = document.querySelector('.modal-event-title');
 
 
-const STORAGE_KEY = "RegisterInfo"
+const STORAGE_KEY = "RegisterInfo";
 
 
 registerCloseBtn.addEventListener('click', hideRegisterModal);
 
 refs.registerModal.addEventListener('click', event => {
-    if (event.target === refs.registerModal) {
+    if (event.target === event.currentTarget) {
         hideRegisterModal()
     }
 });
@@ -48,36 +45,36 @@ function handleRegisterSubmit(event) {
 
   
 
-  const nameError = registerNameInput.nextElementSibling;
-  const emailError = registerEmailInput.nextElementSibling;
-  const messageError = registerMessageTextarea.nextElementSibling;
+  const nameError = event.target.elements.name.nextElementSibling;
+  const emailError = event.target.elements.email.nextElementSibling;
+  const messageError = event.target.elements.message.nextElementSibling;
 
   let hasError = false;
 
-  if (registerNameInput.value.trim() === '') {
-    registerNameInput.classList.add('error');
+  if (event.target.elements.name.value.trim() === '') {
+    event.target.elements.name.classList.add('error');
     nameError.style.display = 'block';
     hasError = true;
   } else {
-    registerNameInput.classList.remove('error');
+    event.target.elements.name.classList.remove('error');
     nameError.style.display = 'none';
   }
 
-  if (registerEmailInput.value.trim() === '') {
-    registerEmailInput.classList.add('error');
+  if (event.target.elements.email.value.trim() === '') {
+    event.target.elements.email.classList.add('error');
     emailError.style.display = 'block';
     hasError = true;
   } else {
-    registerEmailInput.classList.remove('error');
+    event.target.elements.email.classList.remove('error');
     emailError.style.display = 'none';
   }
 
-  if (registerMessageTextarea.value.trim() === '') {
-    registerMessageTextarea.classList.add('error');
+  if (event.target.elements.message.value.trim() === '') {
+    event.target.elements.message.classList.add('error');
     messageError.style.display = 'block';
     hasError = true;
   } else {
-    registerMessageTextarea.classList.remove('error');
+    event.target.elements.message.classList.remove('error');
     messageError.style.display = 'none';
     } 
     
