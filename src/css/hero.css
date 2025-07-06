@@ -1,10 +1,11 @@
 /* HERO */
 
-.hero {
-  padding: 0px 16px 32px 16px;
+.swiper-wrapper {
+  display: flex;
 }
 
 .swiper-slide {
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -60,9 +61,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .hero {
-    padding: 0px 32px 32px 32px;
-  }
   .swiper-img {
     border-radius: 0px;
   }
@@ -165,9 +163,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .hero {
-    padding: 0px 64px 32px 64px;
-  }
   .swiper-img {
     border-radius: 16px;
   }
