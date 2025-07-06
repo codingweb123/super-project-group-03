@@ -5,16 +5,22 @@
   position: fixed;
   top: 0;
   background-color: rgba(0, 0, 0, 0.25);
-  display: none;
+  transition: opacity var(--time) var(--transition),
+    visibility var(--time) var(--transition);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 .register-modal.is-open {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .register-modal .modal {
   border-radius: 16px;
-  padding: 64px 16px;
-  width: 343px;
-  min-height: 794px;
+  padding: 32px 16px;
+  width: calc(100% - 32px);
+  max-width: 704px;
   background: #fceee6;
   position: absolute;
   top: 50%;
@@ -29,16 +35,13 @@
   right: 16px;
   background-color: transparent;
 }
-.register-icon-close {
-  fill: #0b0500;
-}
+
 .register-title {
   font-weight: 600;
   font-size: 48px;
   line-height: 1.2;
   letter-spacing: -0.01em;
   text-align: center;
-  color: #0b0500;
   margin-bottom: 16px;
 }
 .modal-event-title {
@@ -47,7 +50,6 @@
   line-height: 1.4;
   letter-spacing: -0.01em;
   text-align: center;
-  color: #0b0500;
   margin-bottom: 48px;
 }
 
@@ -58,30 +60,17 @@
   align-items: center;
   justify-content: center;
 }
-.register-name-input {
-  border: 1px solid rgba(11, 5, 0, 0.15);
-  border-radius: 4px;
-  padding: 8px 12px;
-  width: 311px;
-  height: 40px;
-  background: rgba(11, 5, 0, 0.05);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #0b0500;
-  margin-top: 8px;
-}
+.register-name-input,
 .register-email-input {
   border: 1px solid rgba(11, 5, 0, 0.15);
+  font-family: inherit;
   border-radius: 4px;
   padding: 8px 12px;
-  width: 311px;
+  width: 100%;
   height: 40px;
   background: rgba(11, 5, 0, 0.05);
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
-  color: #0b0500;
   margin-top: 8px;
 }
 
@@ -89,14 +78,12 @@
   border: 1px solid rgba(11, 5, 0, 0.15);
   border-radius: 4px;
   padding: 12px;
-  width: 311px;
+  width: 100%;
   min-height: 180px;
   background: rgba(11, 5, 0, 0.05);
-  font-family: 'Rubik', sans-serif;
+  font-family: inherit;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
-  color: #0b0500;
   margin-bottom: 0;
   margin-top: 8px;
 }
@@ -104,12 +91,11 @@
   border: 1px solid #e15d05;
   border-radius: 4px;
   padding: 12px 24px;
-  width: 311px;
+  width: 100%;
   height: 48px;
   background: #e15d05;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
   color: #fff;
 }
 .register-button:hover {
@@ -121,14 +107,11 @@
   border: 1px solid #0b0500;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
   color: #0b0500;
 }
 .register-label {
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
-  color: #0b0500;
 }
 
 .register-name-input::placeholder,
@@ -140,7 +123,6 @@
   margin-bottom: 8px;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
   color: rgba(11, 5, 0, 0.6);
 }
 .register-name-input:focus,
@@ -157,7 +139,6 @@
 .error-notification {
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.5;
   color: #ad0000;
   margin-top: 4px;
   display: none;
@@ -177,43 +158,31 @@
 @media screen and (min-width: 768px) {
   .register-modal .modal {
     padding: 64px 32px;
-    width: 704px;
+    max-width: 704px;
     min-height: 760px;
   }
-  .register-name-input {
-    width: 640px;
-    height: 40px;
-  }
+  .register-name-input,
   .register-email-input {
     width: 640px;
     height: 40px;
   }
+
   .register-message-textarea {
     width: 640px;
-    height: 40px;
+    min-height: 40px;
   }
   .register-button {
     width: 342px;
-    height: 48px;
   }
 }
 @media screen and (min-width: 1440px) {
   .register-modal .modal {
     padding: 64px;
-    width: 866px;
-    min-height: 760px;
+    max-width: 866px;
   }
 
-  .register-name-input {
-    width: 738px;
-    height: 40px;
-  }
-
-  .register-email-input {
-    width: 738px;
-    height: 40px;
-  }
-
+  .register-name-input,
+  .register-email-input,
   .register-message-textarea {
     width: 738px;
   }

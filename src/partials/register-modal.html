@@ -1,5 +1,5 @@
 <div class="modal-overlay register-modal">
-  <div class="modal container">
+  <div class="modal">
     <button type="button" class="register-modal-close">
       <svg class="register-icon-close" width="32" height="32">
         <use href="./img/sprite.svg#icon-close"></use>
@@ -16,6 +16,7 @@
           placeholder="Ann"
           class="register-name-input"
           autofocus
+          required
         />
         <span class="error-notification">Error text</span>
       </label>
@@ -27,6 +28,7 @@
           class="register-email-input"
           placeholder="hello@booksy.com"
           autofocus
+          required
         />
         <span class="error-notification">Error text</span>
       </label>
@@ -40,7 +42,7 @@
         ></textarea>
         <span class="error-notification">Error text</span>
       </label>
-      <button type="submit" class="register-button">Register</button>
+      <button class="register-button">Register</button>
     </form>
   </div>
 </div>

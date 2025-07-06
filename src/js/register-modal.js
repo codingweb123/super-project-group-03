@@ -1,9 +1,6 @@
 import { refs } from "./refs";
-import { hideRegisterModal, openRegisterModal } from "./helpers";
+import { hideRegisterModal } from "./helpers";
 
-openRegisterModal();
-
-const registeModalOverlay = document.querySelector('.modal-overlay');
 const registerModalFormEl = document.querySelector('.register-form');
 const registerNameInput = document.querySelector('.register-name-input');
 const registerEmailInput = document.querySelector('.register-email-input');
@@ -17,8 +14,8 @@ const STORAGE_KEY = "RegisterInfo"
 
 registerCloseBtn.addEventListener('click', hideRegisterModal);
 
-registeModalOverlay.addEventListener('click', event => {
-    if (event.target === registeModalOverlay) {
+refs.registerModal.addEventListener('click', event => {
+    if (event.target === refs.registerModal) {
         hideRegisterModal()
     }
 });
@@ -43,16 +40,6 @@ if (savedInfo) {
     registerModalFormEl.elements.email.value = formData.email || "";
     registerModalFormEl.elements.message.value = formData.message || "";
 }
-
-registerModalFormEl.addEventListener("input", handleRegisterFormInput);
-
-function handleRegisterFormInput(event) {
-    const { name, value } = event.target;
-    formData[name] = value.trim();
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-}
-
-
 
 registerModalFormEl.addEventListener('submit', handleRegisterSubmit);
 
@@ -106,16 +93,7 @@ function handleRegisterSubmit(event) {
   }
 };
 
-[registerNameInput, registerEmailInput, registerMessageTextarea].forEach((input) => {
-    const errorSpan = input.nextElementSibling;
 
-    input.addEventListener('input', () => {
-        if (input.value.trim() !== '') {
-            input.classList.remove('error');
-            errorSpan.style.display = 'none';
-        }
-    });
-});
 
 
 
