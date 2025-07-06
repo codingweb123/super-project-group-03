@@ -1,27 +1,19 @@
-const swiper = new Swiper('.swiper', {
-    slidesPerView: 1,
-    loop: false,
-    effect: 'fade',
-    navigation: {
-      nextEl: '.right-btn',
-      prevEl: '.left-btn',
-    },
-    on: {
-      init: () => {
-        toggleArrows();
-      },
-      slideChange: () => {
-        toggleArrows();
-      },
-    },
+import Swiper from "swiper"
+import { Autoplay, Navigation, EffectFade} from "swiper/modules"
+import "swiper/swiper-bundle.css"
+import {refs} from "./refs"
+
+const { hero } = refs;
+new Swiper(".hero .swiper", { 
+  modules: [Navigation, Autoplay, EffectFade],
+  slidesPerView: 1,
+  spaceBetween: 20,
+  effect: 'fade',
+  autoplay: {
+    delay: 3000,
+  },
+  navigation: {
+    nextEl: '.right-btn',
+    prevEl: '.left-btn',
+}
   });
-  
-  const leftBtn = document.querySelector('.left-btn');
-  const rightBtn = document.querySelector('.right-btn');
-  
-  function toggleArrows() {
-    if (!swiper.params.loop) {
-      leftBtn.disabled = swiper.isBeginning;
-      rightBtn.disabled = swiper.isEnd;
-    }
-  }
