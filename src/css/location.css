@@ -20,9 +20,6 @@
 .loc-sec {
   font-weight: 600;
   font-size: 16px;
-  line-height: 1.5;
-  text-transform: capitalize;
-  color: #0b0500;
 }
 
 .loc-title {
@@ -43,17 +40,12 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 8px 0px;
+  padding-bottom: 40px;
 }
 
 .loc-link {
   display: flex;
-  flex-direction: row;
   gap: 16px;
-}
-
-.loc-icon {
-  fill: #0b0500;
 }
 
 .loc-link-text {
@@ -88,7 +80,6 @@
   font-size: 16px;
   line-height: 1.5;
   color: #0b0500;
-  padding-bottom: 40px;
 }
 
 .contact-map {
@@ -130,6 +121,8 @@
   .contact-map iframe {
     padding-left: 32px;
     padding-right: 32px;
+    width: 704px;
+    height: 395px;
   }
 }
 
@@ -142,10 +135,9 @@
   }
 
   .contact-map iframe {
-    /* width: 1312px;
-height: 738px; */
+    width: 1312px;
+    height: 738px;
     padding-left: 64px;
     padding-right: 64px;
   }
 }
-
