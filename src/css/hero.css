@@ -28,6 +28,15 @@
 .first-subtitle {
   max-width: 170px;
 }
+.second-subtitle {
+  max-width: 150px;
+}
+.third-subtitle {
+  max-width: 215px;
+}
+.fourth-subtitle {
+  max-width: 228px;
+}
 
 .banner-btn {
   display: flex;
