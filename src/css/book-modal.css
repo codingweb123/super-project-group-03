@@ -34,7 +34,8 @@
   align-items: center;
   width: 32px;
   height: 32px;
-  padding: 9px;
+  padding: 0;
+  box-sizing: border-box;
   position: absolute;
   top: 24px;
   right: 24px;
@@ -42,8 +43,12 @@
 }
 
 .modal-close-icon {
-  width: 14px;
-  height: 14px;
+  transition: all 0.3s ease;
+}
+
+.modal-close-icon:hover,
+.modal-close-icon:focus {
+  transform: scale(0.8);
 }
 
 .modal-book-image {
