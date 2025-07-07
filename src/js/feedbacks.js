@@ -1,13 +1,12 @@
 import Swiper from 'swiper';
-import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
 const swiperEl = document.querySelector('.feedbacks-swiper');
 
 if (swiperEl) {
   new Swiper('.feedbacks-swiper', {
-    modules: [Navigation, Autoplay, Pagination, EffectFade],
-    loop: false,
+    modules: [Navigation, Pagination],
     slidesPerView: 3,
     spaceBetween: 24,
     pagination: {
@@ -18,14 +17,10 @@ if (swiperEl) {
       nextEl: '.feedbacks-btn-next',
       prevEl: '.feedbacks-btn-prev',
     },
-    scrollbar: {
-      el: '.swiper-scrollbar',
-      draggable: true,
-    },
     breakpoints: {
       0: {
         slidesPerView: 1,
-        spaceBetween: 0,
+        spaceBetween: 24,
       },
       768: {
         slidesPerView: 2,
