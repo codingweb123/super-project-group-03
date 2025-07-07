@@ -1,9 +1,7 @@
 import Swiper from "swiper"
 import { Autoplay, Navigation, EffectFade} from "swiper/modules"
 import "swiper/swiper-bundle.css"
-import {refs} from "./refs"
 
-const { hero } = refs;
 new Swiper(".hero .swiper", { 
   modules: [Navigation, Autoplay, EffectFade],
   slidesPerView: 1,

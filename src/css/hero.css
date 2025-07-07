@@ -25,16 +25,16 @@
   margin-bottom: 16px;
   color: #fff;
 }
-.first-subtitle {
+.swiper-slide:nth-child(1) .banner-text {
   max-width: 170px;
 }
-.second-subtitle {
+.swiper-slide:nth-child(2) .banner-text {
   max-width: 150px;
 }
-.third-subtitle {
+.swiper-slide:nth-child(3) .banner-text {
   max-width: 215px;
 }
-.fourth-subtitle {
+.swiper-slide:nth-child(4) .banner-text {
   max-width: 228px;
 }
 
@@ -82,18 +82,17 @@
     font-size: 32px;
     line-height: 1.2;
   }
-  .first-subtitle {
+  .swiper-slide:nth-child(1) .banner-text {
     max-width: 270px;
   }
-  .second-subtitle {
+  .swiper-slide:nth-child(2) .banner-text {
     max-width: 200px;
   }
-  .third-subtitle {
+  .swiper-slide:nth-child(3) .banner-text,
+  .swiper-slide:nth-child(4) .banner-text {
     max-width: 380px;
   }
-  .fourth-subtitle {
-    max-width: 380px;
-  }
+
   .banner-btn {
     padding: 4px 20px;
     width: 164px;
@@ -107,12 +106,6 @@
   .banner-btn:focus {
     border: 1px solid var(--primary);
     background-color: var(--primary);
-    transition: var(--time) var(--transition);
-  }
-
-  .title-wrapper {
-    padding: 0px 32px;
-    margin: 0 auto;
   }
 
   .hero-title {
@@ -147,23 +140,31 @@
     fill: #fff;
   }
 
-  .hero-arrows-btn-icon:hover,
-  .hero-arrows-btn-icon:focus {
+  .left-btn:not(:disabled):hover .hero-arrows-btn-icon,
+  .left-btn:not(:disabled):focus .hero-arrows-btn-icon,
+  .right-btn:not(:disabled):hover .hero-arrows-btn-icon,
+  .right-btn:not(:disabled):focus .hero-arrows-btn-icon {
     fill: var(--primary);
-    transition: var(--time) var(--transition);
+    transition: transform (--time) var(--transition);
   }
 
-  .left-btn:hover,
-  .left-btn:focus,
-  .right-btn:hover,
-  .right-btn:focus {
+  .left-btn:not(:disabled):hover,
+  .left-btn:not(:disabled):focus,
+  .right-btn:not(:disabled):hover,
+  .right-btn:not(:disabled):focus {
     background: #fceee6;
-    transition: var(--time) var(--transition);
+    transition: transform (--time) var(--transition);
   }
-  .left-btn:active,
-  .right-btn:active {
+  .left-btn:not(:disabled):active,
+  .right-btn:not(:disabled):active {
     background: #5a2502;
-    transition: var(--time) var(--transition);
+    transition: transform (--time) var(--transition);
+  }
+
+  .left-btn:not(:disabled):active .hero-arrows-btn-icon,
+  .right-btn:not(:disabled):active .hero-arrows-btn-icon {
+    fill: #fff;
+    transition: transform (--time) var(--transition);
   }
   .left-btn:disabled,
   .right-btn:disabled {
@@ -185,16 +186,16 @@
     font-size: 52px;
   }
 
-  .first-subtitle {
+  .swiper-slide:nth-child(1) .banner-text {
     max-width: 390px;
   }
-  .second-subtitle {
+  .swiper-slide:nth-child(2) .banner-text {
     max-width: 380px;
   }
-  .third-subtitle {
+  .swiper-slide:nth-child(3) .banner-text {
     max-width: 551px;
   }
-  .fourth-subtitle {
+  .swiper-slide:nth-child(4) .banner-text {
     max-width: 560px;
   }
 
@@ -203,9 +204,7 @@
     border-radius: 4px;
     padding: 8px 20px;
   }
-  .title-wrapper {
-    padding: 0px 64px 32px 64px;
-  }
+
   .hero-title {
     max-width: 1168px;
     height: 62px;
