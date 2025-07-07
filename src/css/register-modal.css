@@ -23,7 +23,7 @@
   width: calc(100% - 32px);
   max-width: 343px;
   min-height: 794px;
-  background: #fceee6;
+  background-color: var(--background);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -59,73 +59,53 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  /* align-items: center;
-  justify-content: center; */
 }
 .register-name-input,
-.register-email-input {
+.register-email-input,
+.register-message-textarea {
   border: 1px solid rgba(11, 5, 0, 0.15);
   font-family: inherit;
   border-radius: 4px;
   padding: 8px 12px;
   width: 100%;
   height: 40px;
-  background: rgba(11, 5, 0, 0.05);
-  font-weight: 400;
+  background-color: rgba(11, 5, 0, 0.05);
   font-size: 16px;
   margin-top: 8px;
 }
 
 .register-message-textarea {
-  border: 1px solid rgba(11, 5, 0, 0.15);
-  border-radius: 4px;
-  padding: 12px;
-  width: 100%;
+  resize: none;
   min-height: 180px;
-  background: rgba(11, 5, 0, 0.05);
-  font-family: inherit;
-  font-weight: 400;
-  font-size: 16px;
-  margin-bottom: 0;
-  margin-top: 8px;
 }
 .register-button {
-  border: 1px solid #e15d05;
+  border: 1px solid var(--orange);
   border-radius: 4px;
   padding: 12px 24px;
   width: 100%;
   height: 48px;
-  background: #e15d05;
+  background-color: var(--orange);
   font-weight: 400;
   font-size: 16px;
   color: #fff;
   margin: 0 auto;
 }
 .register-button:hover {
-  background: #0b0500;
-  border: 1px solid #0b0500;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
 }
 .register-button:focus {
-  background: #ea8d50;
-  border: 1px solid #0b0500;
-  font-weight: 400;
-  font-size: 16px;
-  color: #0b0500;
+  background-color: var(--footer);
+  border: 1px solid var(--primary);
+  color: var(--primary);
 }
 .register-label {
-  font-weight: 400;
   font-size: 16px;
 }
 
 .register-name-input::placeholder,
 .register-email-input:focus::placeholder,
 .register-message-textarea::placeholder {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  font-weight: 400;
-  font-size: 16px;
   color: rgba(11, 5, 0, 0.6);
 }
 .register-name-input:focus,
@@ -140,10 +120,8 @@
   color: transparent;
 }
 .error-notification {
-  font-weight: 400;
   font-size: 12px;
   color: #ad0000;
-  margin-top: 4px;
   display: none;
 }
 .register-name-input.error,

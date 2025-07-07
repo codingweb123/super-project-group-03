@@ -8,7 +8,6 @@ const registerCloseBtn = document.querySelector('.register-modal-close');
 
 const STORAGE_KEY = "RegisterInfo";
 
-
 registerCloseBtn.addEventListener('click', hideRegisterModal);
 
 refs.registerModal.addEventListener('click', event => {
@@ -24,7 +23,7 @@ document.addEventListener('keydown', event => {
 
 
 
-let formData = {
+const formData = {
     name: "",
     email: "",
     message: "",
@@ -32,10 +31,11 @@ let formData = {
 
 const savedInfo = localStorage.getItem(STORAGE_KEY);
 if (savedInfo) {
-    formData = JSON.parse(savedInfo);
-    registerModalFormEl.elements.name.value = formData.name || "";
-    registerModalFormEl.elements.email.value = formData.email || "";
-    registerModalFormEl.elements.message.value = formData.message || "";
+    const savedData = JSON.parse(savedInfo);
+  Object.keys(formData).forEach(key => {
+    formData[key] = savedData[key] || "";
+    registerModalFormEl.elements[key].value = formData[key];
+  })
 }
 
 registerModalFormEl.addEventListener('submit', handleRegisterSubmit);
@@ -43,50 +43,50 @@ registerModalFormEl.addEventListener('submit', handleRegisterSubmit);
 function handleRegisterSubmit(event) {
   event.preventDefault();
 
-  
+  const { name, email, message } = event.target.elements;
 
-  const nameError = event.target.elements.name.nextElementSibling;
-  const emailError = event.target.elements.email.nextElementSibling;
-  const messageError = event.target.elements.message.nextElementSibling;
+  const nameError = name.nextElementSibling;
+  const emailError = email.nextElementSibling;
+  const messageError = message.nextElementSibling;
 
   let hasError = false;
 
-  if (event.target.elements.name.value.trim() === '') {
-    event.target.elements.name.classList.add('error');
+  if (name.value.trim() === '') {
+    name.classList.add('error');
     nameError.style.display = 'block';
     hasError = true;
   } else {
-    event.target.elements.name.classList.remove('error');
+    name.classList.remove('error');
     nameError.style.display = 'none';
   }
 
-  if (event.target.elements.email.value.trim() === '') {
-    event.target.elements.email.classList.add('error');
+  if (email.value.trim() === '') {
+    email.classList.add('error');
     emailError.style.display = 'block';
     hasError = true;
   } else {
-    event.target.elements.email.classList.remove('error');
+    email.classList.remove('error');
     emailError.style.display = 'none';
   }
 
-  if (event.target.elements.message.value.trim() === '') {
-    event.target.elements.message.classList.add('error');
+  if (message.value.trim() === '') {
+    message.classList.add('error');
     messageError.style.display = 'block';
     hasError = true;
   } else {
-    event.target.elements.message.classList.remove('error');
+    message.classList.remove('error');
     messageError.style.display = 'none';
-    } 
+  }
     
 
   if (!hasError) {
-      formData = {
-        name: "",
-        email: "",
-        message: "",
-    }
+    Object.keys(formData).forEach(key => {
+      formData[key] = "";
+    })
+    
     localStorage.removeItem(STORAGE_KEY);
     registerModalFormEl.reset();
+  
   }
 };
 
