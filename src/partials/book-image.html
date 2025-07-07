@@ -1,0 +1,32 @@
+<body>
+<div class="zoom-container">
+  <img src="images/book1.jpg" alt="Book Cover" class="zoom-image" />
+  <div class="zoom-lens"></div>
+</div>
+
+<script>
+  const zoomContainers = document.querySelectorAll('.zoom-container');
+
+  zoomContainers.forEach(container => {
+    const image = container.querySelector('.zoom-image');
+    const lens = container.querySelector('.zoom-lens');
+
+    lens.style.backgroundImage = `url(${image.src})`;
+
+    container.addEventListener('mousemove', e => {
+      const rect = container.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+      lens.style.backgroundPosition = `${x}% ${y}%`;
+      lens.style.opacity = 1;
+    });
+
+    container.addEventListener('mouseleave', () => {
+      lens.style.opacity = 0;
+    });
+  });
+</script>
+
+
+</body>
