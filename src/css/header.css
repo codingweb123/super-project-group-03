@@ -1,6 +1,5 @@
 /* HEADER */
-.container {
-  padding: 14px 24px 14px 20px;
+.header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,8 +21,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    padding: 16px 32px;
+  .header .container {
+    padding: 16px 0px;
   }
   .header-nav {
     display: flex;
@@ -42,22 +41,18 @@
   .header-nav-link {
     font-size: 16px;
     color: rgba(11, 5, 0, 0.6);
+    transition: transform var(--time) var(--transition);
   }
   .burger-btn {
     display: none;
   }
   .header-nav-link:hover {
     color: var(--primary);
-    transition: var(--time) var(--transition);
   }
   .header-nav-link:focus {
     color: #dad9d8;
-    transition: var(--time) var(--transition);
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .container {
-    padding: 16px 64px;
-  }
 }
