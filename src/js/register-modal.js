@@ -1,5 +1,7 @@
 import { refs } from "./refs";
 import { hideRegisterModal } from "./helpers";
+import iziToast from "izitoast"
+import "izitoast/dist/css/iziToast.min.css"
 
 
 const registerModalFormEl = document.querySelector('.register-form');
@@ -43,11 +45,10 @@ registerModalFormEl.addEventListener('submit', handleRegisterSubmit);
 function handleRegisterSubmit(event) {
   event.preventDefault();
 
-  const { name, email, message } = event.target.elements;
+  const { name, email } = event.target.elements;
 
   const nameError = name.nextElementSibling;
   const emailError = email.nextElementSibling;
-  const messageError = message.nextElementSibling;
 
   let hasError = false;
 
@@ -76,7 +77,12 @@ function handleRegisterSubmit(event) {
     
     localStorage.removeItem(STORAGE_KEY);
     registerModalFormEl.reset();
-  
+    iziToast.success({
+    	title: "Registration",
+    	message: "You were successfully registered! Thank you.",
+    	position: "bottomRight",
+    	color: "#fff"
+    })
   }
 };
 
