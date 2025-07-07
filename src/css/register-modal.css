@@ -144,12 +144,10 @@
   }
   .register-name-input,
   .register-email-input {
-    width: 640px;
     height: 40px;
   }
 
   .register-message-textarea {
-    width: 640px;
     min-height: 180px;
   }
   .register-button {
@@ -160,12 +158,6 @@
   .register-modal .modal {
     padding: 64px;
     max-width: 866px;
-  }
-
-  .register-name-input,
-  .register-email-input,
-  .register-message-textarea {
-    width: 738px;
   }
 
   .register-button {

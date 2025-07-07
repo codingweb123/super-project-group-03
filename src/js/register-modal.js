@@ -68,17 +68,7 @@ function handleRegisterSubmit(event) {
     email.classList.remove('error');
     emailError.style.display = 'none';
   }
-
-  if (message.value.trim() === '') {
-    message.classList.add('error');
-    messageError.style.display = 'block';
-    hasError = true;
-  } else {
-    message.classList.remove('error');
-    messageError.style.display = 'none';
-  }
-    
-
+   
   if (!hasError) {
     Object.keys(formData).forEach(key => {
       formData[key] = "";
