@@ -14,13 +14,40 @@ new Accordion(".accordion-container", {
     activeClass: "is-active",
 });
 
+const closeBtn = document.querySelector(".modal-close-btn");
 const booksCountEl = document.querySelector(".count-text");
 const minusEl = document.querySelector(".minus-btn");
 const plusEl = document.querySelector(".plus-btn");
 const addBtnEl = document.querySelector(".add-btn");
 const formEl = document.querySelector(".modal-book-form");
+const bookModalEl = document.querySelector(".book-modal");
 
 let currentBookTitle = "";
+let currentBook = null;
+let count = 1;
+
+function addToCart(book, quantity) {
+
+    const localStorageKey = "product";
+    const savedData = localStorage.getItem(localStorageKey);
+    const products = savedData ? JSON.parse(savedData) : [];
+    const savedBook = products.find(item => item._id === book._id);
+
+    if (savedBook) {
+        savedBook.quantity += quantity;
+    } else {
+        products.push({
+            _id: book._id,
+            book_image: book.book_image,
+            title: book.title,
+            author: book.author,
+            price: book.price,
+            quantity: quantity
+        });
+    };
+
+    localStorage.setItem(localStorageKey, JSON.stringify(products));
+};
 
 export async function loadBookModal(bookId) {
     try {
@@ -36,22 +63,24 @@ export async function loadBookModal(bookId) {
     };
 };
 
-function renderBookModal({ book_image, title, author, price }) {
-    currentBookTitle = title;
+function renderBookModal(book) {
+    currentBook = book;
+    currentBookTitle = book.title;
 
     const imgEl = document.querySelector(".modal-book-image img");
     const titleEl = document.querySelector(".modal-book-title");
     const authorEl = document.querySelector(".modal-book-text");
     const priceEl = document.querySelector(".modal-book-price");
 
-    imgEl.src = book_image;
-    imgEl.alt = title;
-    titleEl.textContent = title;
-    authorEl.textContent = author;
-    priceEl.textContent = `$${price}`;
-};
+    imgEl.src = book.book_image;
+    imgEl.alt = book.title;
+    titleEl.textContent = book.title;
+    authorEl.textContent = book.author;
+    priceEl.textContent = `$${book.price}`;
 
-let count = 1;
+    count = 1;
+    booksCountEl.textContent = count;
+};
 
 plusEl.addEventListener("click", () => {
     count += 1;
@@ -66,10 +95,15 @@ minusEl.addEventListener("click", () => {
 });
 
 addBtnEl.addEventListener("click", () => {
-    iziToast.info({
-        message: `Added ${booksCountEl.textContent} of ${currentBookTitle} to basket!`,
-        position: "topRight",
-    });
+    const quantity = Number(booksCountEl.textContent);
+    if (currentBook) {
+        addToCart(currentBook, quantity);
+        iziToast.success({
+            message: `Added ${quantity} of ${currentBookTitle} to basket!`,
+            position: "topRight",
+        });
+    };
+    
 });
 
 formEl.addEventListener("submit", event => {
@@ -78,15 +112,16 @@ formEl.addEventListener("submit", event => {
         message: "Thank you for your purchase!",
         position: "topRight",
     });
-})
+});
 
-document.addEventListener("click", el => {
-    if (
-        el.target.closest(".modal-close-btn") ||
-        (el.target.classList.contains("modal-overlay") && el.target.classList.contains("is-open"))
-    ) {
+bookModalEl.addEventListener("click", el => {
+    if (el.target === el.currentTarget) {
         hideBookModal();
     };
+});
+
+closeBtn.addEventListener("click", () => {
+    hideBookModal();
 });
 
 document.addEventListener("keydown", element => {
