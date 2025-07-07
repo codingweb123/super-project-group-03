@@ -29,7 +29,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: row;
 }
 
 .menu-overlay-logo {
@@ -42,10 +41,6 @@ body {
     background: transparent;
 }
 
-.menu-overlay-nav {
-    margin-bottom: auto;
-}
-
 .menu-nav-list {
     display: flex;
     flex-direction: column;
@@ -56,7 +51,6 @@ body {
 .menu-nav-link {
     font-weight: 500;
     font-size: 20px;
-    line-height: 1.5;
     color: #0b0500;
 }
 
