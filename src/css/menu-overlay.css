@@ -21,10 +21,6 @@ body {
     pointer-events: auto;
 }
 
-.menu {
-    position: relative;
-}
-
 .menu-overlay-icons-container {
     margin-bottom: 16px;
     padding: 0px 12px 0px 20px;
@@ -34,6 +30,10 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
+}
+
+.menu-overlay-logo {
+    display: flex;
 }
 
 .menu-close-btn {
