@@ -1,3 +1,115 @@
 <div class="modal-overlay book-modal">
-	<div class="modal"></div>
+	<div class="modal">
+		<button type="button" class="modal-close-btn">
+			<svg width="32" height="32" class="modal-close-icon">
+				<use href="./img/sprite.svg#icon-close"></use>
+			</svg>
+		</button>
+		<div class="modal-book-content">
+			<div class="modal-book-image-wrap">
+				<img
+					src="./img/article/article.jpg"
+					alt="Books on the shelf"
+					width="309"
+					height="467"
+					class="modal-book-image"
+				/>
+			</div>
+			<div class="modal-book-info">
+				<h1 class="modal-book-title"></h1>
+				<p class="modal-book-text"></p>
+				<h2 class="modal-book-price"></h2>
+				<form class="modal-book-form">
+					<ul class="count-list">
+						<li class="count-list-item">
+							<button type="button" class="count-modal-btn minus-btn">
+								<svg width="14" height="14" class="count-btn-icon">
+									<use href="./img/sprite.svg#icon-minus"></use>
+								</svg>
+							</button>
+						</li>
+						<li class="count-list-item">
+							<p class="count-text">1</p>
+						</li>
+						<li class="count-list-item">
+							<button type="button" class="count-modal-btn plus-btn">
+								<svg width="14" height="14" class="count-btn-icon">
+									<use href="./img/sprite.svg#icon-plus"></use>
+								</svg>
+							</button>
+						</li>
+					</ul>
+					<div class="modal-book-actions-btns">
+						<button type="button" class="modal-book-btn add-btn">
+							Add to cart
+						</button>
+						<button type="submit" class="modal-book-btn buy-btn">
+							Buy now
+						</button>
+					</div>
+				</form>
+
+				<div class="accordion-container">
+					<div class="ac">
+						<h2 class="ac-header">
+							<button type="button" class="ac-trigger">
+								Details
+								<svg width="24" height="24" class="ac-icon">
+									<use href="./img/sprite.svg#icon-chevron"></use>
+								</svg>
+							</button>
+						</h2>
+						<div class="ac-panel">
+							<p class="ac-text">
+								I Will Find You is a gripping thriller by the master of
+								suspense, Harlan Coben. The story follows David Burroughs, a
+								former prisoner wrongfully convicted of murdering his own son.
+								When he discovers a clue suggesting his son might still be
+								alive, David escapes from prison to uncover the truth.
+								Fast-paced, emotional, and full of unexpected twists — this
+								novel will keep you hooked until the very last page.
+							</p>
+						</div>
+					</div>
+
+					<div class="ac">
+						<h2 class="ac-header">
+							<button type="button" class="ac-trigger">
+								Shipping
+								<svg width="24" height="24" class="ac-icon">
+									<use href="./img/sprite.svg#icon-chevron"></use>
+								</svg>
+							</button>
+						</h2>
+						<div class="ac-panel">
+							<p class="ac-text">
+								We ship across the United States within 2–5 business days. All
+								orders are processed through USPS or a reliable courier service.
+								Enjoy free standard shipping on orders over $50.
+							</p>
+						</div>
+					</div>
+
+					<div class="ac">
+						<h2 class="ac-header">
+							<button type="button" class="ac-trigger">
+								Returns
+								<svg width="24" height="24" class="ac-icon">
+									<use href="./img/sprite.svg#icon-chevron"></use>
+								</svg>
+							</button>
+						</h2>
+						<div class="ac-panel">
+							<p class="ac-text">
+								You can return an item within 14 days of receiving your order,
+								provided it hasn’t been used and is in its original condition.
+								To start a return, please contact our support team — we’ll guide
+								you through the process quickly and hassle-free.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

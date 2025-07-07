@@ -1,1 +1,27 @@
 /* HERO */
+.zoom-container {
+    position: relative;
+    display: flex;
+	width: 200px;
+	height: 300px;
+	overflow: hidden;
+	border-radius: 8px;
+}
+
+.zoom-image {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+.zoom-lens {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: 200% 200%;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
