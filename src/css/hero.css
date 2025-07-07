@@ -1,9 +1,5 @@
 /* HERO */
 
-.swiper-wrapper {
-  display: flex;
-}
-
 .swiper-slide {
   width: 100%;
   position: relative;
@@ -51,6 +47,7 @@
   font-weight: 400;
   font-size: 8px;
   color: #fff;
+  transition: transform (--time) var(--transition);
 }
 .title-wrapper {
   display: flex;
@@ -71,7 +68,7 @@
 
 @media screen and (min-width: 768px) {
   .swiper-img {
-    border-radius: 0px;
+    border-radius: 11px;
   }
 
   .banner-content {
@@ -125,6 +122,7 @@
     width: 48px;
     height: 48px;
     background: var(--orange);
+    transition: transform (--time) var(--transition);
   }
 
   .right-btn {
@@ -134,6 +132,12 @@
     width: 48px;
     height: 48px;
     background: var(--orange);
+    transition: transform (--time) var(--transition);
+  }
+  .right-btn:disabled,
+  .left-btn:disabled,
+  .banner-btn:disabled {
+    cursor: default;
   }
 
   .hero-arrows-btn-icon {
@@ -145,7 +149,6 @@
   .right-btn:not(:disabled):hover .hero-arrows-btn-icon,
   .right-btn:not(:disabled):focus .hero-arrows-btn-icon {
     fill: var(--primary);
-    transition: transform (--time) var(--transition);
   }
 
   .left-btn:not(:disabled):hover,
@@ -153,18 +156,15 @@
   .right-btn:not(:disabled):hover,
   .right-btn:not(:disabled):focus {
     background: #fceee6;
-    transition: transform (--time) var(--transition);
   }
   .left-btn:not(:disabled):active,
   .right-btn:not(:disabled):active {
     background: #5a2502;
-    transition: transform (--time) var(--transition);
   }
 
   .left-btn:not(:disabled):active .hero-arrows-btn-icon,
   .right-btn:not(:disabled):active .hero-arrows-btn-icon {
     fill: #fff;
-    transition: transform (--time) var(--transition);
   }
   .left-btn:disabled,
   .right-btn:disabled {

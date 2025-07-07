@@ -1,12 +1,11 @@
 import Swiper from "swiper"
-import { Autoplay, Navigation, EffectFade} from "swiper/modules"
+import { Autoplay, Navigation } from "swiper/modules"
 import "swiper/swiper-bundle.css"
 
 new Swiper(".hero .swiper", { 
-  modules: [Navigation, Autoplay, EffectFade],
+  modules: [Navigation, Autoplay],
   slidesPerView: 1,
   spaceBetween: 20,
-  effect: 'fade',
   autoplay: {
     delay: 3000,
   },
