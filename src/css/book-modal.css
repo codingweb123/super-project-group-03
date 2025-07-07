@@ -6,6 +6,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.25);
   pointer-events: none;
+  z-index: 9999;
   opacity: 0;
   transition: opacity var(--time) var(--transition);
 }
@@ -20,8 +21,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 343px;
+  max-width: 343px;
   max-height: 1147px;
+  box-sizing: border-box;
   border-radius: 16px;
   padding: 64px 16px;
   background-color: var(--background);
@@ -35,7 +37,6 @@
   width: 32px;
   height: 32px;
   padding: 0;
-  box-sizing: border-box;
   position: absolute;
   top: 24px;
   right: 24px;
@@ -52,6 +53,8 @@
 }
 
 .modal-book-image {
+  width: 100%;
+  max-width: 309px;
   border-radius: 8px;
 }
 
@@ -112,13 +115,15 @@
   border-radius: 4px;
   padding: 12px 24px;
   margin-bottom: 24px;
-  width: 311px;
-  height: 48px;
+  width: 100%;
+  max-width: 311px;
+  height: auto;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: #fff;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .add-btn {
@@ -210,12 +215,8 @@
 /* #endregion accordeon */
 
 @media screen and (min-width: 768px) {
-  .modal-book-content {
-    display: flex;
-  }
-
   .modal {
-    width: 704px;
+    max-width: 704px;
     max-height: 1264px;
     border-radius: 16px;
     padding: 64px 32px;
@@ -231,6 +232,10 @@
     gap: 24px;
   }
 
+  .modal-book-image {
+    width: auto;
+  }
+
   .modal-book-btn {
     width: 307px;
   }
@@ -238,7 +243,7 @@
 
 @media screen and (min-width: 1440px) {
   .modal {
-    width: 1300px;
+    max-width: 1300px;
     max-height: 1264px;
     border-radius: 16px;
     padding: 64px 32px;
