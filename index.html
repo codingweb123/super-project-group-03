@@ -2,24 +2,263 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/super-project-group-03/assets/favicon-DGqsOLgG.svg" />
+		<link rel="icon" type="image/svg+xml" href="./img/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Booksy</title>
 		<script type="module" crossorigin src="/super-project-group-03/index.js"></script>
-		<link rel="modulepreload" crossorigin href="/super-project-group-03/assets/styles-DoeEdv86.js">
-		<link rel="modulepreload" crossorigin href="/super-project-group-03/assets/vendor-3YYsQI6W.js">
-		<link rel="stylesheet" crossorigin href="/super-project-group-03/assets/styles-DEQ7SzSc.css">
-		<link rel="stylesheet" crossorigin href="/super-project-group-03/assets/vendor-B7goKWir.css">
+		<link rel="modulepreload" crossorigin href="/super-project-group-03/assets/styles-D0PTBH9F.js">
+		<link rel="modulepreload" crossorigin href="/super-project-group-03/assets/vendor-Bmkux-ky.js">
+		<link rel="stylesheet" crossorigin href="/super-project-group-03/assets/styles-Dw4jg-nH.css">
+		<link rel="stylesheet" crossorigin href="/super-project-group-03/assets/vendor-o82lw0bT.css">
 	</head>
 	<body>
 		<header class="header">
-	<div class="container"></div>
+  <div class="container">
+    <a class="logo-link" href="./index.html" aria-label="Main page">
+      <svg class="header-logo" width="84" height="36">
+        <use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-logo"></use>
+      </svg>
+    </a>
+    <nav class="header-nav">
+      <ul class="header-nav-list">
+        <li class="header-nav-item">
+          <a class="header-nav-link active" href="./index.html">Home</a>
+        </li>
+        <li class="header-nav-item">
+          <a class="header-nav-link" href="#books">Books</a>
+        </li>
+        <li class="header-nav-item">
+          <a class="header-nav-link" href="#feedbacks">Feedbacks</a>
+        </li>
+        <li class="header-nav-item">
+          <a class="header-nav-link" href="#events">Events</a>
+        </li>
+        <li class="header-nav-item">
+          <a class="header-nav-link" href="#location">Location</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button
+      class="burger-btn"
+      type="button"
+      aria-label="Open mobile navigation menu"
+    >
+      <svg class="burger-icon" width="24" height="24">
+        <use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-menu"></use>
+      </svg>
+    </button>
+  </div>
 </header>
+
 
 		<main>
 			<section class="section hero">
-	<div class="container"></div>
+  <div class="container">
+		<div class="swiper">
+			<ul class="swiper-wrapper">
+				<li class="swiper-slide">
+					<picture>
+						<source
+							type="image/webp"
+							media="(min-width: 1440px)"
+							srcset="/super-project-group-03/assets/banner1-PKfK8unK.webp 1x, /super-project-group-03/assets/banner1@2x-jtLZgYx3.webp 2x"
+						/>
+						<source
+							type="image/webp"
+							media="(min-width: 768px)"
+							srcset="/super-project-group-03/assets/banner1-tablet-DlK2PZto.webp 1x, /super-project-group-03/assets/banner1-tablet@2x-CC2PkMFV.webp 2x"
+						/>
+						<source
+							type="image/webp"
+							media="(max-width: 768px)"
+							srcset="/super-project-group-03/assets/banner1-mobile-PFP00PqS.webp 1x, /super-project-group-03/assets/banner1-mobile@2x-CjH7nFM7.webp 2x"
+						/>
+						<source
+							media="(min-width: 1440px)"
+							srcset="/super-project-group-03/assets/banner1-3gtuBep-.jpg 1x, /super-project-group-03/assets/banner1@2x-B4vXOwZ8.jpg 2x"
+						/>
+						<source
+							media="(min-width: 768px)"
+							srcset="/super-project-group-03/assets/banner1-tablet-BhLt4o3B.jpg 1x, /super-project-group-03/assets/banner1-tablet@2x-B8CJb1DD.jpg 2x"
+						/>
+						<source
+							media="(max-width: 768px)"
+							srcset="/super-project-group-03/assets/banner1-mobile-Jhq-wNeI.jpg 1x, /super-project-group-03/assets/banner1-mobile@2x-IIwQwLwO.jpg 2x"
+						/>
+						<img
+							class="swiper-img"
+							src="/super-project-group-03/assets/banner1-mobile-Jhq-wNeI.jpg"
+							alt="A book and a cup of coffee resting on the table"
+						/>
+					</picture>
+
+					<ul class="banner-content">
+						<li>
+							<h2 class="banner-text">Get 10% off your first order</h2>
+						</li>
+						<li><a href="#books" class="banner-btn">Shop Now!</a></li>
+					</ul>
+				</li>
+
+				<li class="swiper-slide">
+					<picture>
+						<source
+							type="image/webp"
+							media="(min-width: 1440px)"
+							srcset="/super-project-group-03/assets/banner2-IWPlQQDY.webp 1x, /super-project-group-03/assets/banner2@2x-DBAKiXMC.webp 2x"
+						/>
+						<source
+							type="image/webp"
+							media="(min-width: 768px)"
+							srcset="/super-project-group-03/assets/banner2-tablet-C0WBDDKn.webp 1x, /super-project-group-03/assets/banner2-tablet@2x-bZQuMYf3.webp 2x"
+						/>
+						<source
+							type="image/webp"
+							media="(max-width: 768px)"
+							srcset="data:image/webp;base64,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 1x, /super-project-group-03/assets/banner2-mobile@2x-CcDbKfEU.webp 2x"
+						/>
+						<source
+							media="(min-width: 1440px)"
+							srcset="/super-project-group-03/assets/banner2-Dc_tNiUT.jpg 1x, /super-project-group-03/assets/banner2@2x-BERQ7HPP.jpg 2x"
+						/>
+						<source
+							media="(min-width: 768px)"
+							srcset="/super-project-group-03/assets/banner2-tablet-DQHC7fw1.jpg 1x, /super-project-group-03/assets/banner2-tablet@2x-CeF4qRyk.jpg 2x"
+						/>
+						<source
+							media="(max-width: 768px)"
+							srcset="data:image/jpeg;base64,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 1x, /super-project-group-03/assets/banner2-mobile@2x-8GoIjGgi.jpg 2x"
+						/>
+						<img
+							class="swiper-img"
+							src="data:image/jpeg;base64,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"
+							alt="An open book and a pair of glasses lying on the table"
+						/>
+					</picture>
+
+					<ul class="banner-content">
+						<li>
+							<h2 class="banner-text">Save 15% on some books</h2>
+						</li>
+						<li><a href="#books" class="banner-btn">Shop Now!</a></li>
+					</ul>
+				</li>
+
+				<li class="swiper-slide">
+					<picture>
+						<source
+							type="image/webp"
+							media="(min-width: 1440px)"
+							srcset="/super-project-group-03/assets/banner3-Clqr4I4i.webp 1x, /super-project-group-03/assets/banner3@2x-D7eypau-.webp 2x"
+						/>
+						<source
+							type="image/webp"
+							media="(min-width: 768px)"
+							srcset="/super-project-group-03/assets/banner3-tablet-Dz70nvGX.webp 1x, /super-project-group-03/assets/banner3-tablet@2x-BNVo2sWH.webp 2x"
+						/>
+						<source
+							type="image/webp"
+							media="(max-width: 768px)"
+							srcset="/super-project-group-03/assets/banner3-mobile-7BDJ7Lkm.webp 1x, /super-project-group-03/assets/banner3-mobile@2x-sQHXR3yr.webp 2x"
+						/>
+						<source
+							media="(min-width: 1440px)"
+							srcset="/super-project-group-03/assets/banner3-BT7IPqYb.jpg 1x, /super-project-group-03/assets/banner3@2x-9Ol8a24-.jpg 2x"
+						/>
+						<source
+							media="(min-width: 768px)"
+							srcset="/super-project-group-03/assets/banner3-tablet-N0y1CZl0.jpg 1x, /super-project-group-03/assets/banner3-tablet@2x-BSF-zlmI.jpg 2x"
+						/>
+						<source
+							media="(max-width: 768px)"
+							srcset="/super-project-group-03/assets/banner3-mobile-vVEhNNJ1.jpg 1x, /super-project-group-03/assets/banner3-mobile@2x-DGVHQsWw.jpg 2x"
+						/>
+						<img
+							class="swiper-img"
+							src="/super-project-group-03/assets/banner3-mobile-vVEhNNJ1.jpg"
+							alt="Shelves filled with books"
+						/>
+					</picture>
+
+					<ul class="banner-content third-subtitle">
+						<li>
+							<h2 class="banner-text">
+								Summer Sale!
+								<span style="display: block">Up to -40% discounts</span>
+							</h2>
+						</li>
+						<li><a href="#books" class="banner-btn">Shop Now!</a></li>
+					</ul>
+				</li>
+
+				<li class="swiper-slide">
+					<picture>
+						<source
+							type="image/webp"
+							media="(min-width: 1440px)"
+							srcset="/super-project-group-03/assets/banner4-C-UDFWIX.webp 1x, /super-project-group-03/assets/banner4@2x-DKXuujpe.webp 2x"
+						/>
+						<source
+							type="image/webp"
+							media="(min-width: 768px)"
+							srcset="/super-project-group-03/assets/banner4-tablet-4OX5JTQ0.webp 1x, /super-project-group-03/assets/banner4-tablet@2x-FQVQVkSs.webp 2x"
+						/>
+						<source
+							type="image/webp"
+							media="(max-width: 768px)"
+							srcset="data:image/webp;base64,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 1x, /super-project-group-03/assets/banner4-mobile@2x-w36M1mDa.webp 2x"
+						/>
+						<source
+							media="(min-width: 1440px)"
+							srcset="/super-project-group-03/assets/banner4-BGVfHOkC.jpg 1x, /super-project-group-03/assets/banner4@2x-CCWrpVmX.jpg 2x"
+						/>
+						<source
+							media="(min-width: 768px)"
+							srcset="/super-project-group-03/assets/banner4-tablet-Ca5twAnZ.jpg 1x, /super-project-group-03/assets/banner4-tablet@2x-DLI8atB8.jpg 2x"
+						/>
+						<source
+							media="(max-width: 768px)"
+							srcset="/super-project-group-03/assets/banner4-mobile-D3dkPTYo.jpg 1x, /super-project-group-03/assets/banner4-mobile@2x-B_m34VB1.jpg 2x"
+						/>
+						<img
+							class="swiper-img"
+							src="/super-project-group-03/assets/banner4-mobile-D3dkPTYo.jpg"
+							alt="An open book with flowers in a vase on the table"
+						/>
+					</picture>
+
+					<ul class="banner-content">
+						<li>
+							<h2 class="banner-text">
+								Last chance to buy our spring bestsellers
+							</h2>
+						</li>
+						<li><a href="#books" class="banner-btn">Shop Now!</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="title-wrapper">
+				<li>
+					<h1 class="hero-title">Discover Your Next Great Read Today!</h1>
+				</li>
+				<li class="hero-arrows-btn">
+					<button class="slider-btn left-btn" aria-label="Previous">
+						<svg class="hero-arrows-btn-icon" width="24" height="24">
+							<use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-arrow"></use>
+						</svg>
+					</button>
+					<button class="slider-btn right-btn" aria-label="Next">
+						<svg class="hero-arrows-btn-icon" width="24" height="24">
+							<use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-arrow"></use>
+						</svg>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
 </section>
+
 			<section class="section books" id="books">
 	<div class="container"></div>
 </section>
@@ -82,7 +321,7 @@
           <a href="#" class="event-register">
             Register
             <svg width="24" height="24">
-              <use href="/super-project-group-03/assets/sprite-Dt9Q0C3D.svg#icon-chevron"></use>
+              <use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-chevron"></use>
             </svg>
           </a>
         </li>
@@ -132,7 +371,7 @@
           <a href="#" class="event-register">
             Register
             <svg width="24" height="24">
-              <use href="/super-project-group-03/assets/sprite-Dt9Q0C3D.svg#icon-chevron"></use>
+              <use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-chevron"></use>
             </svg>
           </a>
         </li>
@@ -182,7 +421,7 @@
           <a href="#" class="event-register">
             Register
             <svg width="24" height="24">
-              <use href="/super-project-group-03/assets/sprite-Dt9Q0C3D.svg#icon-chevron"></use>
+              <use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-chevron"></use>
             </svg>
           </a>
         </li>
@@ -194,12 +433,12 @@
         <li class="swiper-controls">
           <button class="swiper-button-prev" aria-label="Previous slide">
             <svg width="24" height="24">
-              <use href="/super-project-group-03/assets/sprite-Dt9Q0C3D.svg#icon-arrow"></use>
+              <use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-arrow"></use>
             </svg>
           </button>
           <button class="swiper-button-next" aria-label="Next slide">
             <svg width="24" height="24">
-              <use href="/super-project-group-03/assets/sprite-Dt9Q0C3D.svg#icon-arrow"></use>
+              <use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-arrow"></use>
             </svg>
           </button>
         </li>
@@ -263,8 +502,73 @@
 </section>
 
 			<section class="section location" id="location">
-	<div class="container"></div>
+	<div class="container">
+		<div class="location-text">
+			<p class="loc-sec">Location</p>
+			<h1 class="loc-title">How to find us</h1>
+			<p class="loc-text">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+				varius enim in eros elementum tristique.
+			</p>
+		</div>
+
+		<ul class="loc-list">
+			<li class="loc-link">
+				<svg class="loc-icon" width="24" height="25">
+					<use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-mail"></use>
+				</svg>
+				<p class="loc-link-text">
+					Email
+					<a class="contact-link" href="mailto:hello@booksy.com">
+						hello@booksy.com
+					</a>
+				</p>
+			</li>
+			<li class="loc-link">
+				<svg class="loc-icon" width="24" height="25">
+					<use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-phone"></use>
+				</svg>
+				<p class="loc-link-text">
+					Phone
+					<a class="contact-link" href="tel:+61 (241) 304-3012">
+						+61 (241) 304-3012
+					</a>
+				</p>
+			</li>
+			<li class="loc-link">
+				<svg class="loc-icon" width="24" height="25">
+					<use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-location"></use>
+				</svg>
+
+				<p class="loc-link-text">
+					Office
+					<br />
+					<span class="contact-text">123 Books St, Sydney NSW 2000 AU</span>
+				</p>
+			</li>
+		</ul>
+
+		<iframe
+			class="contact-map"
+			data-src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d13250.515426453032!2d151.20443169696918!3d-33.87345464318767!3m2!1i1024!2i768!4f13.1!2m1!1s123%20Books%20St%2C%20Sydney%20NSW%202000%20AU!5e0!3m2!1suk!2sua!4v1751650313907!5m2!1suk!2sua"
+			style="border: 0"
+			allowfullscreen=""
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+		></iframe>
+		
+		<button
+			id="scrollToTopBtn"
+			class="scroll-to-top"
+			aria-label="Scroll to top"
+		>
+			<svg class="icon-scroll" width="24" height="25">
+				<use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-arrow"></use>
+			</svg>
+		</button>
+	</div>
 </section>
+
 		</main>
 
 		<footer class="footer">
@@ -273,7 +577,7 @@
       <div class="footer-left">
         <a class="footer-logo-link" href="./index.html"
           ><svg class="footer-logo" width="84" height="36">
-            <use href="/super-project-group-03/assets/sprite-Dt9Q0C3D.svg#icon-logo"></use>
+            <use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-logo"></use>
           </svg>
         </a>
         <ul class="footer-nav">
@@ -316,8 +620,54 @@
 	<div class="menu"></div>
 </div>
 		<div class="modal-overlay register-modal">
-	<div class="modal"></div>
+  <div class="modal">
+    <button type="button" class="register-modal-close">
+      <svg class="register-icon-close" width="32" height="32">
+        <use href="/super-project-group-03/assets/sprite-DL5siW2B.svg#icon-close"></use>
+      </svg>
+    </button>
+    <h2 class="register-title">Register</h2>
+    <h3 class="modal-event-title">Cozy Book Club — “The Midnight Library”</h3>
+    <form class="register-form" autocomplete="off">
+      <label class="register-label">
+        Name*
+        <input
+          type="text"
+          name="name"
+          placeholder="Ann"
+          class="register-name-input"
+          autofocus
+          required
+        />
+        <p class="error-notification">Error text</p>
+      </label>
+      <label class="register-label">
+        Email*
+        <input
+          type="email"
+          name="email"
+          class="register-email-input"
+          placeholder="hello@booksy.com"
+          autofocus
+          required
+        />
+        <p class="error-notification">Error text</p>
+      </label>
+      <label class="register-label">
+        Message
+        <textarea
+          name="message"
+          rows="8"
+          class="register-message-textarea"
+          placeholder="Type your message..."
+        ></textarea>
+        <p class="error-notification">Error text</p>
+      </label>
+      <button class="register-button">Register</button>
+    </form>
+  </div>
 </div>
+
 		<div class="modal-overlay book-modal">
 	<div class="modal"></div>
 </div>
