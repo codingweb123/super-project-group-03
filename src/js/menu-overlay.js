@@ -2,7 +2,10 @@ const burgerMenu = document.querySelector(".menu")
 const openBtn = document.querySelector(".burger-btn")
 const menuOverlay = document.querySelector(".menu-overlay")
 
-openBtn.addEventListener("click", () => menuOverlay.classList.add("is-open"))
+openBtn.addEventListener("click", () => {
+	document.body.style.overflow = "hidden"
+	menuOverlay.classList.add("is-open")
+})
 
 burgerMenu.addEventListener("click", element => {
 	element.preventDefault()
@@ -13,6 +16,7 @@ burgerMenu.addEventListener("click", element => {
 	}
 	if (menuBtn.classList.contains("menu-close-btn")) {
 		menuOverlay.classList.remove("is-open")
+		document.body.style.overflow = "unset"
 	}
 	if (menuBtn.classList.contains("menu-nav-link")) {
 		menuOverlay.classList.remove("is-open")

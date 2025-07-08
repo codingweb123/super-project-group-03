@@ -1,5 +1,5 @@
 import Swiper from "swiper"
-import { Autoplay, Navigation } from "swiper/modules"
+import { Autoplay, Keyboard, Navigation } from "swiper/modules"
 import "swiper/swiper-bundle.css"
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -14,9 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 new Swiper(".hero .swiper", {
-	modules: [Navigation, Autoplay],
+	modules: [Navigation, Autoplay, Keyboard],
 	slidesPerView: 1,
 	spaceBetween: 20,
+	keyboard: {
+		enabled: true,
+	},
 	autoplay: {
 		delay: 3000,
 		disableOnInteraction: true,

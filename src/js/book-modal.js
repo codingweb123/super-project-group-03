@@ -25,6 +25,8 @@ const bookModalEl = document.querySelector(".book-modal")
 let currentBookTitle = ""
 let currentBook = null
 let count = 1
+let priceEl = null
+let price = 0
 
 function addToCart(book, quantity) {
 	const localStorageKey = "product"
@@ -53,7 +55,7 @@ export async function loadBookModal(bookId) {
 		const book = await getBookByID(bookId)
 		renderBookModal(book)
 		openBookModal()
-        document.body.style.overflow = "hidden"
+		document.body.style.overflow = "hidden"
 	} catch (error) {
 		iziToast.error({
 			title: "Error",
@@ -70,13 +72,14 @@ function renderBookModal(book) {
 	const imgEl = document.querySelector(".modal-book-image")
 	const titleEl = document.querySelector(".modal-book-title")
 	const authorEl = document.querySelector(".modal-book-text")
-	const priceEl = document.querySelector(".modal-book-price")
+	priceEl = document.querySelector(".modal-book-price")
 
 	imgEl.src = book.book_image
 	imgEl.alt = book.title
 	titleEl.textContent = book.title
 	authorEl.textContent = book.author
 	priceEl.textContent = `$${book.price}`
+	price = book.price
 
 	count = 1
 	booksCountEl.textContent = count
@@ -84,13 +87,17 @@ function renderBookModal(book) {
 
 plusEl.addEventListener("click", () => {
 	count += 1
+	priceEl.textContent = `$${(price * count).toFixed(2)}`
 	booksCountEl.textContent = count
 })
 
 minusEl.addEventListener("click", () => {
 	if (count > 1) {
 		count -= 1
+		priceEl.textContent = `$${(price * count).toFixed(2)}`
 		booksCountEl.textContent = count
+	} else {
+		priceEl.textContent = `$${price}`
 	}
 })
 
@@ -100,31 +107,38 @@ addBtnEl.addEventListener("click", () => {
 		addToCart(currentBook, quantity)
 		iziToast.success({
 			message: `Added ${quantity} of ${currentBookTitle} to basket!`,
-			position: "topRight",
+			position: "bottomRight",
+			color: "#fff",
 		})
 	}
 })
 
 formEl.addEventListener("submit", event => {
 	event.preventDefault()
-    location.href = "product.html"
+	iziToast.success({
+		message: "Thank you for your purchase!",
+		position: "bottomRight",
+		color: "#fff",
+	})
+	hideBookModal()
+	document.body.style.overflow = "unset"
 })
 
 bookModalEl.addEventListener("click", el => {
 	if (el.target === el.currentTarget) {
 		hideBookModal()
-        document.body.style.overflow = "unset"
+		document.body.style.overflow = "unset"
 	}
 })
 
 closeBtn.addEventListener("click", () => {
 	hideBookModal()
-    document.body.style.overflow = "unset"
+	document.body.style.overflow = "unset"
 })
 
 document.addEventListener("keydown", element => {
 	if (element.key === "Escape") {
 		hideBookModal()
-        document.body.style.overflow = "unset"
+		document.body.style.overflow = "unset"
 	}
 })

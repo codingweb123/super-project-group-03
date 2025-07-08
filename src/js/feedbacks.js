@@ -1,12 +1,12 @@
 import Swiper from "swiper"
-import { Navigation, Pagination } from "swiper/modules"
+import { Keyboard, Navigation, Pagination } from "swiper/modules"
 import "swiper/swiper-bundle.css"
 
 const swiperEl = document.querySelector(".feedbacks-swiper")
 
 if (swiperEl) {
 	new Swiper(".feedbacks-swiper", {
-		modules: [Navigation, Pagination],
+		modules: [Navigation, Pagination, Keyboard],
 		slidesPerView: 3,
 		spaceBetween: 24,
 		pagination: {
@@ -16,6 +16,9 @@ if (swiperEl) {
 		navigation: {
 			nextEl: ".feedbacks-btn-next",
 			prevEl: ".feedbacks-btn-prev",
+		},
+		keyboard: {
+			enabled: true,
 		},
 		breakpoints: {
 			0: {

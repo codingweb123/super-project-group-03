@@ -16,6 +16,7 @@ const isMobile = () => {
 const numberToPaginate = () => {
 	return isMobile() ? 10 : 24
 }
+const paginationNumber = 4
 const paginationNum = document.querySelector(".pagination-number")
 const moreButton = document.querySelector(".btn.more")
 const paginationCount = document.querySelector(".pagination-all")
@@ -62,12 +63,13 @@ const renderNewBooks = books => {
 	)
 }
 const sliceBooksByPage = (books, page = 0) => {
-	return books.slice(
-		page * (isMobile() ? 10 : 24),
-		(page + 1) * (isMobile() ? 10 : 24)
-	)
+	return books.slice(page * paginationNumber, (page + 1) * paginationNumber)
+}
+const sliceFirstBooksByPage = (books, page = 0) => {
+	return books.slice(page * numberToPaginate(), (page + 1) * numberToPaginate())
 }
 const setPaginationNumber = (books, value) => {
+	console.log(paginationNum.textContent)
 	paginationNum.textContent =
 		books.length < value ? books.length.toString() : value.toString()
 }
@@ -112,7 +114,7 @@ const renderTopBooks = async () => {
 		.then(data => {
 			removeRenderLoading(booksList)
 			data.forEach(category => renderedBooks.push(...category.books))
-			renderBooks(sliceBooksByPage(renderedBooks))
+			renderBooks(sliceFirstBooksByPage(renderedBooks))
 			page += 1
 			if (renderedBooks.length > numberToPaginate()) {
 				showLoadingMore()
@@ -179,7 +181,7 @@ categories.addEventListener("click", async e => {
 	getBooksByCategory(category)
 		.then(data => {
 			renderedBooks = data
-			renderBooks(sliceBooksByPage(data))
+			renderBooks(sliceFirstBooksByPage(data))
 			page += 1
 			if (data.length > numberToPaginate()) {
 				showLoadingMore()
@@ -198,9 +200,19 @@ categories.addEventListener("click", async e => {
 moreButton.addEventListener("click", e => {
 	e.preventDefault()
 	moreButton.disabled = true
-	const maxPage = Math.ceil(renderedBooks.length / numberToPaginate())
-	if (page < maxPage) {
-		if (page + 1 >= maxPage) {
+	const alreadyShown = numberToPaginate() + page * paginationNumber
+	const remaining = renderedBooks.length - alreadyShown
+	console.log(remaining)
+	if (remaining > 0) {
+		const slice = sliceBooksByPage(renderedBooks, page)
+		renderNewBooks(slice)
+
+		page++
+
+		const newShown = alreadyShown + slice.length
+		setPaginationNumber(renderedBooks, newShown)
+
+		if (newShown >= renderedBooks.length) {
 			hideLoadingMore()
 			iziToast.success({
 				position: "bottomRight",
@@ -208,9 +220,7 @@ moreButton.addEventListener("click", e => {
 				color: "#fff",
 			})
 		}
-		setPaginationNumber(renderedBooks, (page + 1) * numberToPaginate())
-		renderNewBooks(sliceBooksByPage(renderedBooks, page))
-		page += 1
+
 		moreButton.disabled = false
 	} else {
 		iziToast.error({
