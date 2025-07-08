@@ -4,18 +4,31 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Page 2</title>
+		<title>Products</title>
 		<link rel="stylesheet" href="./css/styles.css" />
+		<link rel="stylesheet" href="./css/product.css" />
 	</head>
 	<body>
 		<load src="./partials/header.html" />
 
 		<main>
-			<!-- продукт -->
+			<div class="product-container">
+				<h1 class="product-cart-title">Your cart is empty!</h1>
+				<div class="product-cards-container">
+					<ul class="product-list js-list"></ul>
+				</div>
+				<div class="total-price-container hidden">
+					<h2 class="total-price-title js-total-price">Total price:</h2>
+					<div class="total-price-buttons">
+						<button class="buy-product-btn">Buy Now</button>
+						<button class="clear-cart-btn">Clear cart</button>
+					</div>
+				</div>
+			</div>
 		</main>
 
 		<load src="./partials/footer.html" />
-		
+
 		<script type="module" src="./js/product.js"></script>
 	</body>
 </html>

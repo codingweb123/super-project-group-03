@@ -64,5 +64,32 @@ body {
 }
 
 ::-webkit-scrollbar {
-	display: none;
+    width: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #181818;
+}
+
+.loading {
+    pointer-events: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: transparent;
+    animation: loading 2s linear infinite forwards;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #ddd 2%, #b5b5b5 18%, #ddd 33%);
+    background-size: 1300px;
+}
+
+@keyframes loading {
+    from {
+        background-position: -650px 0;
+    }
+
+    to {
+        background-position: 650px 0;
+    }
 }
