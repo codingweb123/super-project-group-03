@@ -128,7 +128,7 @@ const renderTopBooks = async () => {
 document.addEventListener("DOMContentLoaded", async () => {
 	renderLoadingTexts(categories)
   renderLoadingBooks()
-	setTimeout(() => {
+	setTimeout(async () => {
     getCategoryList()
   		.then(data => {
   			removeRenderLoading(categories)
@@ -142,11 +142,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   		})
   	  try {
          await renderTopBooks()
+         removeRenderLoading(booksList)
       } catch () {
   			iziToast.error({ message: "Error while getting books data!" })
   		}
   }, 1000)
-	removeRenderLoading(booksList)
 })
 
 categoryBtn.addEventListener("click", () => {
