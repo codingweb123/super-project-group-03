@@ -127,26 +127,26 @@ const renderTopBooks = async () => {
 
 document.addEventListener("DOMContentLoaded", async () => {
 	renderLoadingTexts(categories)
-  renderLoadingBooks()
+	renderLoadingBooks()
 	setTimeout(async () => {
-    getCategoryList()
-  		.then(data => {
-  			removeRenderLoading(categories)
-  			categories.innerHTML += data.reduce(
-  				(acc, { list_name }) => (acc += !list_name ? "" : `<li>${list_name}`),
-  				""
-  			)
-  		})
-  		.catch(() => {
-  			iziToast.error({ message: "Error while getting data from categories!" })
-  		})
-  	  try {
-         await renderTopBooks()
-         removeRenderLoading(booksList)
-      } catch () {
-  			iziToast.error({ message: "Error while getting books data!" })
-  		}
-  }, 1000)
+		getCategoryList()
+			.then(data => {
+				removeRenderLoading(categories)
+				categories.innerHTML += data.reduce(
+					(acc, { list_name }) => (acc += !list_name ? "" : `<li>${list_name}`),
+					""
+				)
+			})
+			.catch(() => {
+				iziToast.error({ message: "Error while getting data from categories!" })
+			})
+		try {
+			await renderTopBooks()
+			removeRenderLoading(booksList)
+		} catch {
+			iziToast.error({ message: "Error while getting books data!" })
+		}
+	}, 1000)
 })
 
 categoryBtn.addEventListener("click", () => {
