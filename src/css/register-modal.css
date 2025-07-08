@@ -22,11 +22,12 @@
   padding: 64px 16px;
   width: calc(100% - 32px);
   max-width: 343px;
-  min-height: 794px;
+  height: 794px;
   background-color: var(--background);
   position: absolute;
   top: 50%;
   left: 50%;
+  overflow: hidden;
   transform: translate(-50%, -50%);
 }
 .register-modal-close {
