@@ -34,6 +34,7 @@ const renderBooks = books => {
     <li>
         <img
             src="${book_image}"
+			loading="lazy"
             alt="${title}"
         />
         <h3><b>${title}</b><span class="price">$${price}</span></h3>
@@ -50,6 +51,7 @@ const renderNewBooks = books => {
     <li>
         <img
             src="${book_image}"
+			loading="lazy"
             alt="${title}"
         />
         <h3><b>${title}</b><span class="price">$${price}</span></h3>
@@ -78,7 +80,7 @@ const renderLoadingBooks = () => {
 			(a += `
     <li>
         <img
-            src="noimg.png"
+		    src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
             class="loading"
             alt=""
         />
@@ -141,7 +143,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 			})
 		try {
 			await renderTopBooks()
-			removeRenderLoading(booksList)
 		} catch {
 			iziToast.error({ message: "Error while getting books data!" })
 		}
@@ -171,7 +172,6 @@ categories.addEventListener("click", async e => {
 	hideLoadingMore()
 	if (e.target.dataset.value === "all") {
 		await renderTopBooks()
-		removeRenderLoading(booksList)
 		return
 	}
 	renderedBooks = []

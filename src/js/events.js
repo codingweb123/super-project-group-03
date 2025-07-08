@@ -22,26 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-new Swiper('.events .swiper', {
-  spaceBetween: 24,
-  slidesPerView: 1,
+new Swiper(".events .swiper", {
+	spaceBetween: 24,
+	slidesPerView: 1,
 
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+	navigation: {
+		nextEl: ".events-button-next",
+		prevEl: ".events-button-prev",
+	},
 
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+	pagination: {
+		el: ".pagination",
+		clickable: true,
+	},
 
-  breakpoints: {
-    768: {
-      slidesPerView: 2,
-    },
-    1440: {
-      slidesPerView: 3,
-    },
-  },
-});
+	breakpoints: {
+		768: {
+			slidesPerView: 2,
+		},
+		1440: {
+			slidesPerView: 3,
+		},
+	},
+})

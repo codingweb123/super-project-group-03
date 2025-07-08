@@ -1,153 +1,151 @@
 .events h4 {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 .events h2 {
-  font-size: 36px;
-  margin-top: 16px;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+	font-size: 36px;
+	margin-top: 16px;
+	line-height: 1.2;
+	letter-spacing: -0.01em;
 }
 
 .events p {
-  font-size: 18px;
-  margin-top: 16px;
+	font-size: 18px;
+	margin-top: 16px;
 }
 
 .event-image {
-  border-radius: 16px;
-  width: 100%;
-  height: 277px;
+	border-radius: 16px;
+	width: 100%;
+	height: 277px;
 }
 
 .swiper-wrapper {
-  margin-top: 32px;
+	margin-top: 32px;
 }
 .swiper-wrapper svg {
-  transform: rotate(90deg);
+	transform: rotate(90deg);
 }
 .swiper-wrapper h3 {
-  margin-top: 24px;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
+	margin-top: 24px;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.4;
+	letter-spacing: -0.01em;
 }
 
 .swiper-wrapper p {
-  font-size: 16px;
-  margin-top: 0;
+	font-size: 16px;
+	margin-top: 0;
 }
 
 .swiper-wrapper .card-text {
-  margin-top: 8px;
+	margin-top: 8px;
 }
 
 .event-register {
-  display: flex;
-  margin-top: 24px;
-  font-size: 16px;
-  width: 95px;
-  transition: color var(--time) var(--transition),
-    fill var(--time) var(--transition);
+	display: flex;
+	margin-top: 24px;
+	font-size: 16px;
+	width: 95px;
+	transition: color var(--time) var(--transition),
+		fill var(--time) var(--transition);
 }
 
 .event-register:hover,
 .event-register:focus {
-  color: rgb(11, 5, 0, 75%);
-  fill: rgb(11, 5, 0, 75%);
-  text-decoration: underline;
+	color: rgb(11, 5, 0, 75%);
+	fill: rgb(11, 5, 0, 75%);
+	text-decoration: underline;
 }
 
 .swiper-slide:nth-child(2) .event-register,
 .swiper-slide:nth-child(3) .event-register {
-  margin-top: 58px;
+	margin-top: 58px;
 }
 
-.swiper-button-prev svg {
-  transform: rotate(-90deg);
+.events-button-prev svg {
+	transform: rotate(-90deg);
 }
-.swiper-button-next svg {
-  transform: rotate(90deg);
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  width: 48px;
-  height: 48px;
-  background-color: var(--orange);
-  padding: 12px;
-  fill: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color var(--time) var(--transition),
-    fill var(--time) var(--transition);
+.events-button-next svg {
+	transform: rotate(90deg);
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover,
-.swiper-button-prev:focus,
-.swiper-button-next:focus {
-  background-color: transparent;
-  fill: var(--primary);
-  border: 1px solid rgb(11, 5, 0, 15%);
-}
-.swiper-button-prev:active,
-.swiper-button-next:active {
-  background-color: #5a2502;
-  fill: white;
-}
-
-.swiper-controls {
-  display: flex;
-  gap: 16px;
+.events-button-prev,
+.events-button-next {
+	width: 48px;
+	height: 48px;
+	background-color: var(--orange);
+	padding: 12px;
+	fill: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color var(--time) var(--transition),
+		fill var(--time) var(--transition);
 }
 
-.swiper-pagination {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
+.events-button-prev:hover,
+.events-button-next:hover,
+.events-button-prev:focus,
+.events-button-next:focus {
+	background-color: transparent;
+	fill: var(--primary);
+	border: 1px solid rgb(11, 5, 0, 15%);
+}
+.events-button-prev:active,
+.events-button-next:active {
+	background-color: #5a2502;
+	fill: white;
+}
+
+.events .controls {
+	display: flex;
+	gap: 16px;
+}
+
+.events .pagination {
+	display: block;
 }
 
 .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #c5b9b2;
-  border-radius: 50%;
-  transition: background-color var(--time) var(--transition);
+	width: 12px;
+	height: 12px;
+	background-color: #c5b9b2;
+	border-radius: 50%;
+	transition: background-color var(--time) var(--transition);
 }
 
-.swiper-pagination-bullet-active {
-  background-color: var(--primary);
+.events .swiper-pagination-bullet-active {
+	background-color: var(--primary);
 }
 
 .event-controler {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 32px;
 }
 
 .swiper-button-disabled {
-  background-color: rgb(225, 93, 5, 20%);
-  fill: rgb(11, 5, 0, 20%);
-  pointer-events: none;
+	background-color: rgb(225, 93, 5, 20%);
+	fill: rgb(11, 5, 0, 20%);
+	pointer-events: none;
 }
 
 @media screen and (min-width: 768px) {
-  .event-text {
-    max-width: 560px;
-  }
+	.event-text {
+		max-width: 560px;
+	}
 }
 
 @media screen and (min-width: 1440px) {
-  .events h2 {
-    font-size: 48px;
-  }
-  .swiper-slide:nth-child(3) .event-register {
-    margin-top: 82px;
-  }
-  .event-controler {
-    display: none;
-  }
+	.events h2 {
+		font-size: 48px;
+	}
+	.swiper-slide:nth-child(3) .event-register {
+		margin-top: 82px;
+	}
+	.event-controler {
+		display: none;
+	}
 }
