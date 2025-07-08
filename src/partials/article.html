@@ -1,3 +1,65 @@
 <section class="section article" id="article">
-	<div class="container"></div>
+  <div class="container">
+    <ul>
+      <li>
+        <h2 class="title">
+          Welcome to Booksy - your cozy corner for handpicked reads.
+        </h2>
+      </li>
+      <li>
+        <p class="article-text">
+          We believe books are more than just stories - they&#39;re companions,
+          doorways, and memories. Whether you&#39;re chasing adventures or quiet
+          moments, we&#39;re here to help you find your next favorite book.
+        </p>
+      </li>
+    </ul>
+    <picture>
+      <source
+        type="image/webp"
+        media="(min-width: 1440px)"
+        srcset="./img/article/article.webp 1x, ./img/article/article@2x.webp 2x"
+      />
+      <source
+        type="image/webp"
+        media="(min-width: 768px)"
+        srcset="
+          ./img/article/article-tablet.webp    1x,
+          ./img/article/article-tablet@2x.webp 2x
+        "
+      />
+      <source
+        type="image/webp"
+        media="(max-width: 768px)"
+        srcset="
+          ./img/article/article-mobile.webp    1x,
+          ./img/article/article-mobile@2x.webp 2x
+        "
+      />
+      <source
+        media="(min-width: 1440px)"
+        srcset="./img/article/article.jpg 1x, ./img/article/article@2x.jpg 2x"
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="
+          ./img/article/article-tablet.jpg    1x,
+          ./img/article/article-tablet@2x.jpg 2x
+        "
+      />
+      <source
+        media="(max-width: 768px)"
+        srcset="
+          ./img/article/article-mobile.jpg    1x,
+          ./img/article/article-mobile@2x.jpg 2x
+        "
+      />
+      <img
+        class="article-image"
+        src="./img/article/article-mobile.jpg"
+        loading="lazy"
+        alt="Article Image"
+      />
+    </picture>
+  </div>
 </section>
