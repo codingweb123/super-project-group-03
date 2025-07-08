@@ -2,14 +2,22 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
-  display: none; 
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  fill: #fff;
   z-index: 1000;
+  background-color: #000;
   transition: opacity var(--time) var(--transition);
 }
 
 .scroll-to-top.show {
-  display: block;
   opacity: 1;
+  pointer-events: auto;
 }

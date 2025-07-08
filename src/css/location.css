@@ -6,11 +6,8 @@
   gap: 32px;
 }
 .location .container {
-   grid-template-columns: 1fr;
-    grid-template-areas:
-      "text"
-      "info"
-      "map";
+   display: flex;
+  flex-direction: column;
   gap: 32px;
 }
 
@@ -30,21 +27,17 @@
   font-size: 48px;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: #0b0500;
-}
+ }
 
 .loc-text {
   font-size: 18px;
-  line-height: 1.5;
-  color: #0b0500;
-}
+  }
 
 .loc-list {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding-bottom: 40px;
-}
+  }
 
 .loc-link {
   display: flex;
@@ -55,11 +48,10 @@
   font-size: 20px;
   line-height: 1.4;
   letter-spacing: -0.01em;
-  color: #0b0500;
-  display: flex;
+ display: flex;
   flex-direction: column;
   gap: 8px;
-}
+ }
 
 .link-text {
   display: flex;
@@ -68,33 +60,27 @@
 }
 
 .contact-link {
-  font-size: 16px;
-  line-height: 1.5;
+    font-size: 16px;
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  color: #0b0500;
-}
+  transition: color var(--time) var(--transition);
+  }
 
 .contact-link:hover,
 .contact-link:focus {
-  opacity: 0.2;
-}
+    color: rgba(11, 5, 0, 0.6);
+  }
 .contact-text {
   font-size: 16px;
-  line-height: 1.5;
-  color: #0b0500;
-}
+  }
 
 .contact-map {
      grid-area: map;
   display: block;
-  width: 100%;
   max-width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
-  padding-left: 16px;
-  padding-right: 16px;
-}
+ }
 
 @media screen and (min-width: 768px) {
   .section.location {
