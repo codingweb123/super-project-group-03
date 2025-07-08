@@ -1,26 +1,30 @@
-import Swiper from 'swiper';
-import 'swiper/css';
-import { Navigation, Pagination } from 'swiper/modules';
-Swiper.use([Navigation, Pagination]);
+import Swiper from "swiper"
+import "swiper/css"
+import { Keyboard, Navigation, Pagination } from "swiper/modules"
+import { hideRegisterModal, openRegisterModal } from "./helpers"
+import { refs } from "./refs"
 
-document.addEventListener('DOMContentLoaded', () => {
-  const registerLinks = document.querySelectorAll('.event-register');
-  const modalOverlay = document.querySelector('.register-modal');
+const { registerModal } = refs
+Swiper.use([Navigation, Pagination, Keyboard])
 
-  registerLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      modalOverlay.classList.add('is-open');
-    });
-  });
+document.addEventListener("DOMContentLoaded", () => {
+	const registerLinks = document.querySelectorAll(".event-register")
 
-  // Закрытие модалкy при клике по фону
-  modalOverlay.addEventListener('click', e => {
-    if (e.target === e.currentTarget) {
-      modalOverlay.classList.remove('is-open');
-    }
-  });
-});
+	registerLinks.forEach(link => {
+		link.addEventListener("click", e => {
+			e.preventDefault()
+			document.body.style.overflow = "hidden"
+			openRegisterModal()
+		})
+	})
+
+	registerModal.addEventListener("click", e => {
+		if (e.target === e.currentTarget) {
+			document.body.style.overflow = "unset"
+			hideRegisterModal()
+		}
+	})
+})
 
 new Swiper(".events .swiper", {
 	spaceBetween: 24,
@@ -34,6 +38,10 @@ new Swiper(".events .swiper", {
 	pagination: {
 		el: ".pagination",
 		clickable: true,
+	},
+
+	keyboard: {
+		enabled: true,
 	},
 
 	breakpoints: {

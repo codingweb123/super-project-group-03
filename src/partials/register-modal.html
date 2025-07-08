@@ -16,9 +16,10 @@
           placeholder="Ann"
           class="register-name-input"
           autofocus
+          autocomplete="name"
           required
         />
-        <p class="error-notification">Error text</p>
+        <span class="error-notification">Error text</span>
       </label>
       <label class="register-label">
         Email*
@@ -26,11 +27,11 @@
           type="email"
           name="email"
           class="register-email-input"
+          autocomplete="email"
           placeholder="hello@booksy.com"
-          autofocus
           required
         />
-        <p class="error-notification">Error text</p>
+        <span class="error-notification">Error text</span>
       </label>
       <label class="register-label">
         Message
@@ -40,7 +41,7 @@
           class="register-message-textarea"
           placeholder="Type your message..."
         ></textarea>
-        <p class="error-notification">Error text</p>
+        <span class="error-notification">Error text</span>
       </label>
       <button class="register-button">Register</button>
     </form>
