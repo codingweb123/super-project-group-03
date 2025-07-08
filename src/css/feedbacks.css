@@ -1,1 +1,134 @@
 /* FEEDBACKS */
+
+.feedbacks-title {
+	line-height: 1.2;
+	letter-spacing: -0.01em;
+	margin-bottom: 24px;
+	font-weight: 600;
+	font-size: 36px;
+}
+
+.feedbacks .swiper-wrapper {
+	margin-top: 0;
+}
+
+.feedbacks-text {
+	font-weight: 400;
+	font-size: 18px;
+	margin-bottom: 80px;
+}
+.feedbacks-list {
+	display: flex;
+	align-items: center;
+	margin-bottom: 32px;
+}
+
+.feedbacks-item {
+	height: 314px;
+	border: 1px solid rgba(11, 5, 0, 0.15);
+	border-radius: 16px;
+	padding: 32px;
+	padding-bottom: 102px;
+}
+
+.feedbacks-item img {
+	float: left;
+	border-radius: 50%;
+	margin-right: 16px;
+}
+.feedbacks-item-coment {
+	font-size: 18px;
+	margin-bottom: 24px;
+}
+
+.feedbacks .feedbacks-item-title {
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.feedbacks-item-text {
+	font-size: 16px;
+}
+
+.feedbacks-btn {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.feedbacks-btn li:last-child {
+	display: flex;
+	gap: 16px;
+}
+
+.feedbacks-btn .swiper-pagination {
+	display: block;
+	position: unset;
+	width: unset;
+}
+.feedbacks-btn-arrow svg {
+	fill: currentColor;
+	transition: fill var(--time) var(--transition);
+}
+
+.feedbacks-btn-arrow {
+	background-color: #e15d05;
+	color: #fff;
+	border: 1px solid rgba(11, 5, 0, 0.15);
+	padding: 12px;
+	width: 48px;
+	height: 48px;
+	transition: background-color var(--time) var(--transition),
+		color var(--time) var(--transition);
+}
+
+.feedbacks-btn-arrow:not(:disabled):hover,
+.feedbacks-btn-arrow:not(:disabled):focus {
+	background-color: #fceee6;
+	color: black;
+}
+
+.feedbacks-btn-arrow:not(:disabled):active {
+	background-color: #5a2502;
+	color: #fff;
+}
+
+.feedbacks .swiper-pagination-bullet-active {
+	background-color: var(--primary);
+}
+
+.feedbacks-arrow-left {
+	transform: rotate(-90deg);
+}
+
+.feedbacks-arrow-right {
+	transform: rotate(90deg);
+}
+
+.feedbacks-btn-arrow.swiper-button-disabled {
+	cursor: default;
+	border-color: transparent;
+	background-color: rgba(225, 93, 5, 0.2);
+	pointer-events: none;
+}
+
+@media only screen and (min-width: 768px) {
+	.feedbacks .feedbacks-item {
+		width: 340px;
+		height: 244px;
+		padding-bottom: 32px;
+	}
+	.feedbacks-title {
+		width: unset;
+	}
+	.feedbacks-text {
+		width: unset;
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	.feedbacks .feedbacks-item {
+		width: 421px;
+		height: 217px;
+	}
+}
