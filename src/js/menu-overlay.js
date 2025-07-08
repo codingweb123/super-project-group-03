@@ -1,18 +1,23 @@
-const closeBtn = document.querySelector(".menu-close-btn");
-const menuOverlay = document.querySelector(".menu-overlay");
-const menuLinks = document.querySelectorAll(".menu-nav-link");
-const body = document.querySelector("body");
+const burgerMenu = document.querySelector(".menu")
+const openBtn = document.querySelector(".burger-btn")
+const menuOverlay = document.querySelector(".menu-overlay")
 
-closeBtn.addEventListener("click", handleClick);
+openBtn.addEventListener("click", () => menuOverlay.classList.add("is-open"))
 
-function handleClick() {
-    menuOverlay.classList.remove("is-open");
-};
+burgerMenu.addEventListener("click", element => {
+	element.preventDefault()
+	let menuBtn = element.target
 
-menuLinks.forEach(link => {
-    link.addEventListener("click", handleLink);
-    function handleLink() {
-        menuOverlay.classList.remove("is-open");
-        body.style.scrollBehavior = "smooth";
-    };
-});
+	if (menuBtn.nodeName === "use" || menuBtn.nodeName === "svg") {
+		menuBtn = menuBtn.closest(".menu-close-btn")
+	}
+	if (menuBtn.classList.contains("menu-close-btn")) {
+		menuOverlay.classList.remove("is-open")
+	}
+	if (menuBtn.classList.contains("menu-nav-link")) {
+		menuOverlay.classList.remove("is-open")
+		document.querySelector(menuBtn.getAttribute("href")).scrollIntoView({
+			behavior: "smooth",
+		})
+	}
+})
