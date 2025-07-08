@@ -127,7 +127,6 @@ const renderTopBooks = async () => {
 
 document.addEventListener("DOMContentLoaded", async () => {
 	renderLoadingTexts(categories)
-	renderLoadingBooks()
 	setTimeout(async () => {
 		getCategoryList()
 			.then(data => {
