@@ -1,1 +1,166 @@
 /* REGISTER MODAL */
+.register-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: opacity var(--time) var(--transition),
+    visibility var(--time) var(--transition);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 999;
+}
+.register-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.register-modal .modal {
+  border-radius: 16px;
+  padding: 64px 16px;
+  width: calc(100% - 32px);
+  max-width: 343px;
+  min-height: 794px;
+  background-color: var(--background);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.register-modal-close {
+  position: absolute;
+  padding: 0;
+  height: 32px;
+  top: 16px;
+  right: 16px;
+  background-color: transparent;
+}
+
+.register-title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.modal-event-title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.register-name-input,
+.register-email-input,
+.register-message-textarea {
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  font-family: inherit;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(11, 5, 0, 0.05);
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.register-message-textarea {
+  resize: none;
+  min-height: 180px;
+  padding: 12px;
+}
+.register-button {
+  border: 1px solid var(--orange);
+  border-radius: 4px;
+  padding: 12px 24px;
+  width: 100%;
+  height: 48px;
+  background-color: var(--orange);
+  font-size: 16px;
+  color: #fff;
+  margin: 0 auto;
+}
+.register-button:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+.register-button:focus {
+  background-color: var(--footer);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+.register-label {
+  font-size: 16px;
+}
+
+.register-name-input::placeholder,
+.register-email-input:focus::placeholder,
+.register-message-textarea::placeholder {
+  color: rgba(11, 5, 0, 0.6);
+}
+.register-name-input:focus,
+.register-email-input:focus,
+.register-message-textarea:focus {
+  border: 1px solid rgba(11, 5, 0, 0.6);
+  outline: none;
+}
+.register-name-input:focus::placeholder,
+.register-email-input:focus::placeholder,
+.register-message-textarea:focus::placeholder {
+  color: transparent;
+}
+.error-notification {
+  font-size: 12px;
+  color: #ad0000;
+  display: none;
+}
+.register-name-input.error,
+.register-email-input.error,
+.register-message-textarea.error {
+  border-color: #ad0000;
+  color: #ad0000;
+}
+.register-name-input.error::placeholder,
+.register-email-input.error::placeholder,
+.register-message-textarea.error::placeholder {
+  color: #ad0000;
+}
+
+@media screen and (min-width: 768px) {
+  .register-modal .modal {
+    padding: 64px 32px;
+    max-width: 704px;
+    min-height: 760px;
+  }
+  .register-name-input,
+  .register-email-input {
+    height: 40px;
+  }
+
+  .register-message-textarea {
+    min-height: 180px;
+  }
+  .register-button {
+    width: 342px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .register-modal .modal {
+    padding: 64px;
+    max-width: 866px;
+  }
+
+  .register-button {
+    width: 342px;
+  }
+}
