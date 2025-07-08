@@ -47,13 +47,25 @@
 
 .feedbacks-btn {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   gap: 16px;
 }
 
+.feedbacks-btn li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.feedbacks-btn .swiper-pagination {
+  position: unset;
+  width: unset;
+}
 .feedbacks-btn-arrow svg {
   fill: currentColor;
-  transition: fill 0.3s;
+  transition: fill var(--time) var(--transition);
 }
 
 .feedbacks-btn-arrow {
@@ -63,7 +75,8 @@
   padding: 12px;
   width: 48px;
   height: 48px;
-  transition: background-color 0.3s, fill 0.3s;
+  transition: background-color var(--time) var(--transition),
+    color var(--time) var(--transition);
 }
 
 .feedbacks-btn-arrow:hover,
@@ -74,6 +87,15 @@
 
 .feedbacks-btn-arrow:active {
   background-color: #5a2502;
+  color: #fff;
+}
+
+.swiper-pagination-bullet {
+  transition: var(--time) var(--transition);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary);
 }
 
 .feedbacks-arrow-left {
