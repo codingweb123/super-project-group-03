@@ -15,7 +15,6 @@
 .hero .swiper-img {
 	border-radius: 8px;
 }
-
 .banner-content {
 	position: absolute;
 	bottom: 16px;
@@ -40,7 +39,6 @@
 .hero .swiper-slide:nth-child(4) .banner-text {
 	max-width: 228px;
 }
-
 .banner-btn {
 	display: flex;
 	align-items: center;
@@ -116,8 +114,6 @@
 
 	.hero-arrows-btn {
 		display: flex;
-		align-items: center;
-		justify-content: space-between;
 		gap: 24px;
 	}
 
