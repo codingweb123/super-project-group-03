@@ -69,7 +69,6 @@ const sliceFirstBooksByPage = (books, page = 0) => {
 	return books.slice(page * numberToPaginate(), (page + 1) * numberToPaginate())
 }
 const setPaginationNumber = (books, value) => {
-	console.log(paginationNum.textContent)
 	paginationNum.textContent =
 		books.length < value ? books.length.toString() : value.toString()
 }
@@ -202,7 +201,6 @@ moreButton.addEventListener("click", e => {
 	moreButton.disabled = true
 	const alreadyShown = numberToPaginate() + page * paginationNumber
 	const remaining = renderedBooks.length - alreadyShown
-	console.log(remaining)
 	if (remaining > 0) {
 		const slice = sliceBooksByPage(renderedBooks, page)
 		renderNewBooks(slice)
